@@ -1,0 +1,40 @@
+{
+	"name": "siwigsm",
+	"title": "SIWI GSM Platform",
+	"description": "GSM development platform for MT2503 SoC.",
+	"url": "http://siwi.in/",
+	"homepage": "http://siwi.in",
+	"license": {
+		"type": "MIT",
+		"url": "https://opensource.org/licenses/MIT"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/siwiembedded/siwigsm.git"
+	},
+	"version": "v0.1.0",
+	"vendor": "SiWi Embedded Solutions Pvt. Ltd.",
+	"packageRepositories": [
+		"http://dl.platformio.org/packages/manifest.json"
+	],
+	"frameworks": {
+		"siwisdk": {
+			"package": "framework-siwisdk",
+			"script": "builder/framework/siwisdk.py"
+		}
+	},
+	"packages": {
+		"toolchain-gccarmnoneeabi": {
+			"type": "toolchain",
+			"version": "1.80201.190214"
+		},
+		"framework-siwisdk": {
+			"type": "framework",
+			"version": "~0.0.0"
+		},
+		"tool-siwiflasher": {
+			"type": "uploader",
+			"version": "~1.0.0"
+		}
+	}
+}
