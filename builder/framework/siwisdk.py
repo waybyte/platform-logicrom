@@ -6,6 +6,7 @@
 import os
 from os.path import isdir, isfile, join, dirname
 from shutil import copyfile
+from hashlib import md5
 
 from SCons.Script import DefaultEnvironment
 
@@ -21,13 +22,17 @@ main_c = join(env.subst("$PROJECT_DIR"), "src", "main.c")
 if False == isfile(main_c):
     copyfile(join(FRAMEWORK_DIR, "template", "main.c"), main_c)
 
-GFH_Generator = join(FRAMEWORK_DIR,
-                     "tools",
-                     "GFH_Generator.exe")
-FOTA_Generator = join(FRAMEWORK_DIR,
-                      "tools",
-                      "FOTA_Generator.exe")
-
+def fota_crc16(data:bytearray, length):
+    crc = 0
+    for i in range(length):
+        data_byte = data[i] & 0xff
+        crc = crc ^ (data_byte << 8)
+        for _ in range(8):
+            if (crc & 0x8000):
+                crc = (crc << 1) ^ 0x1021
+            else:
+                crc = crc << 1
+    return crc & 0xffff
 
 def gen_bin_file(target, source, env):
     cmd = ["$OBJCOPY"]
@@ -38,15 +43,61 @@ def gen_bin_file(target, source, env):
     cmd.extend(["-O", "binary"])
     cmd.append(target_elf.get_abspath())
     cmd.append(temp_firm)
-    env.Execute(env.VerboseAction(" ".join(cmd), "Elf to Binary"))
+    env.Execute(env.VerboseAction(" ".join(cmd), " "))
 
-    cmd_gfh = [GFH_Generator]
-    cmd_gfh.append(temp_firm)
-    cmd_gfh.append(target_firm.get_abspath())
-    env.Execute(env.VerboseAction(" ".join(cmd_gfh), "Adding GFH Header"))
+    GFH_Header = bytearray([
+        0x4D, 0x4D, 0x4D, 0x01, 0x40, 0x00, 0x00, 0x00,
+        0x46, 0x49, 0x4C, 0x45, 0x5F, 0x49, 0x4E, 0x46,
+        0x4F, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00,
+        0x00, 0x70, 0x07, 0x00, 0x00, 0x00, 0x2E, 0x10,
+        0x00, 0x00, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF,
+        0x40, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+        0x40, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x22,
+    ])
+    firm_size = (os.path.getsize(temp_firm) + 64).to_bytes(4, "little")
+    GFH_Header[0x20:0x23] = firm_size[0:3]
 
+    with open(target_firm.get_abspath(), "wb") as out_firm:
+        with open(temp_firm, "rb") as in_firm:
+            out_firm.write(GFH_Header)
+            out_firm.write(in_firm.read())
+            in_firm.close()
+        out_firm.close()
     os.remove(temp_firm)
 
+def gen_fota_file(target, source, env):
+    (fota_firm, ) = target
+    (firm_bin, ) = source
+    # 0x1c : Filesize
+    # 0x4c : CRC16
+    FOTA_Header = bytearray([
+        0x53, 0x49, 0x57, 0x49, 0x5F, 0x41, 0x50, 0x50,
+        0x5F, 0x46, 0x4F, 0x54, 0x41, 0x5F, 0x55, 0x50,
+        0x44, 0x41, 0x54, 0x45, 0x00, 0x00, 0x01, 0x00,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+        0x10, 0x00, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF,
+        0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+        0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+        0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+        0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+        0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00
+    ])
+    firm_size = os.path.getsize(firm_bin.get_abspath()).to_bytes(4, "little")
+    FOTA_Header[0x1c:0x1f] = firm_size[0:3]
+    crc = fota_crc16(FOTA_Header, len(FOTA_Header) - 4).to_bytes(4, "little")
+    FOTA_Header[0x4c:0x4f] = crc[0:3]
+    hash = md5()
+    hash.update(FOTA_Header)
+    with open(firm_bin.get_abspath(), "rb") as in_firm:
+        in_firm_data = in_firm.read()
+        hash.update(in_firm_data)
+        with open(fota_firm.get_abspath(), "wb") as out_firm:
+            out_firm.write(FOTA_Header)
+            out_firm.write(in_firm_data)
+            out_firm.write(hash.digest())
+            out_firm.close()
+        in_firm.close()
 
 # Setup ENV
 env.Append(
@@ -110,11 +161,7 @@ env.Append(
             suffix=".bin"
         ),
         BinToFOTA=Builder(
-            action=env.VerboseAction(" ".join([
-                FOTA_Generator,
-                "$SOURCES",
-                "$TARGET"
-            ]), "Creating FOTA firmware $TARGET"),
+            action=env.VerboseAction(gen_fota_file, "Generating FOTA firmware $TARGET"),
             suffix=".bin"
         )
     )
@@ -133,12 +180,10 @@ if board.get("build.newlib") == "nano":
 # copy CCFLAGS to ASFLAGS (-x assembler-with-cpp mode)
 env.Append(ASFLAGS=env.get("CCFLAGS", [])[:])
 
-
 def load_siwilib_debug():
     for i, libs in enumerate(env["LIBS"]):
         if libs == "siwisdk":
             env["LIBS"][i] = "siwisdk_debug"
-
 
 if board.get("build.siwilib") == "debug":
     load_siwilib_debug()
