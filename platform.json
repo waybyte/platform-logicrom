@@ -15,7 +15,9 @@
 	"version": "v0.1.0",
 	"vendor": "SiWi Embedded Solutions Pvt. Ltd.",
 	"packageRepositories": [
-		"http://dl.platformio.org/packages/manifest.json"
+		"https://dl.bintray.com/platformio/dl-packages/manifest.json",
+		"http://dl.platformio.org/packages/manifest.json",
+		"https://raw.githubusercontent.com/siwiembedded/platformio-package/master/manifest.json"
 	],
 	"frameworks": {
 		"siwisdk": {
@@ -30,7 +32,7 @@
 		},
 		"framework-siwisdk": {
 			"type": "framework",
-			"version": "~0.0.0"
+			"version": "~0.1.0"
 		},
 		"tool-siwiflasher": {
 			"type": "uploader",
