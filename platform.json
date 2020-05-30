@@ -4,10 +4,7 @@
 	"description": "GSM development platform for MT2503 SoC.",
 	"url": "http://siwi.in/",
 	"homepage": "http://siwi.in",
-	"license": {
-		"type": "MIT",
-		"url": "https://opensource.org/licenses/MIT"
-	},
+	"license": "MIT",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/siwiembedded/siwigsm.git"
