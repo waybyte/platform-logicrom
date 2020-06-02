@@ -39,7 +39,7 @@ def gen_bin_file(target, source, env):
     (target_firm, ) = target
     (target_elf, ) = source
 
-    temp_firm = os.path.dirname(target_firm.get_abspath()) + "\\temp.bin"
+    temp_firm = os.path.dirname(target_firm.get_abspath()) + "/temp.bin"
     cmd.extend(["-O", "binary"])
     cmd.append(target_elf.get_abspath())
     cmd.append(temp_firm)
