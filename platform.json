@@ -25,7 +25,7 @@
 	"packages": {
 		"toolchain-gccarmnoneeabi": {
 			"type": "toolchain",
-			"version": "1.80201.190214"
+			"version": "~1.80201.0"
 		},
 		"framework-siwisdk": {
 			"type": "framework",
