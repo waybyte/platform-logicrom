@@ -64,7 +64,7 @@ def gen_bin_file(target, source, env):
             out_firm.write(in_firm.read())
             in_firm.close()
         out_firm.close()
-    os.remove(temp_firm)
+        os.remove(temp_firm)
 
 def gen_fota_file(target, source, env):
     (fota_firm, ) = target
