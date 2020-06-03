@@ -171,8 +171,10 @@ if board.get("build.newlib") == "nano":
     env.Append(
         LINKFLAGS=[
             "--specs=nano.specs",
-            "-u _printf_float",
-            "-u _scanf_float",
+            "-u",
+            "_printf_float",
+            "-u",
+            "_scanf_float",
             "--specs=nosys.specs"
         ]
     )
