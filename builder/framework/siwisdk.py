@@ -105,17 +105,17 @@ env.Append(
 
     CCFLAGS=[
         "-Os",  # optimize for size
-                "-g",
-                "-march=armv5te",
-                "-mfloat-abi=soft",
-                "-fmessage-length=0",
+        "-g",
+        "-march=armv5te",
+        "-mfloat-abi=soft",
+        "-fmessage-length=0",
         "-ffunction-sections",  # place each function in its own section
         "-fdata-sections",
-                "-fsigned-char",
+        "-fsigned-char",
         "-Wall",
         "-mthumb",
-                "-mthumb-interwork",
-                "-std=gnu11"
+        "-mthumb-interwork",
+        "-std=gnu11"
     ],
 
     CXXFLAGS=[
