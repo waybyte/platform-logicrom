@@ -7,7 +7,7 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/siwiembedded/siwigsm.git"
+		"url": "https://github.com/siwiembedded/platform-siwigsm.git"
 	},
 	"version": "v0.1.0",
 	"vendor": "SiWi Embedded Solutions Pvt. Ltd.",
@@ -29,7 +29,7 @@
 		},
 		"framework-siwisdk": {
 			"type": "framework",
-			"version": "~0.1.0"
+			"version": "~0.2.0"
 		},
 		"tool-siwiflasher": {
 			"type": "uploader",
