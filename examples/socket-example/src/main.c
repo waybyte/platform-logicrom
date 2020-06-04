@@ -130,15 +130,15 @@ static int status_callback(int id, int event, int err)
 	return 0;
 }
 
-static int recv_callback(int sockid, const unsigned char *buf, int len)
+static int recv_callback(int sockid, const void *buf, int len)
 {
 	printf("Data received (%d bytes):\n", len);
-	printf("%s", buf);
+	printf("%s", (char *)buf);
 
 	return 0;
 }
 
-static int xmit_callback(int sockid, int result, unsigned char *buf, int len, void *arg)
+static int xmit_callback(int sockid, int result, const void *buf, int len, void *arg)
 {
 	printf("Data send status: %d\n", result);
 
