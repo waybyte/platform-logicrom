@@ -12,6 +12,8 @@ jobs:
         example:
           - "examples/gpio-blink"
           - "examples/adc-example"
+          - "examples/socket-example"
+          - "examples/ssl-socket-example"
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
