@@ -20,6 +20,8 @@
 
 * [gpio-blink](https://github.com/siwiembedded/platform-siwigsm/tree/master/examples/gpio-blink) - GPIO Toggle Example
 * [adc-example](https://github.com/siwiembedded/platform-siwigsm/tree/master/examples/adc-example) - ADC Read Example
+* [socket-example](https://github.com/siwiembedded/platform-siwigsm/tree/master/examples/socket-example) - TCP Socket example using RAW Socket APIs
+* [ssl-socket-example](https://github.com/siwiembedded/platform-siwigsm/tree/master/examples/ssl-socket-example) - SSL Socket example
 
 ## Resources
 
