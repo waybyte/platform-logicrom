@@ -193,7 +193,7 @@ static void socket_task(void *arg)
 /**
  * Application main entry point
  */
-void user_main(void)
+int main(int argc, char *argv[])
 {
 	/*
 	 * Initialize library and Setup STDIO
@@ -208,4 +208,9 @@ void user_main(void)
 	os_create_task(socket_task, NULL, FALSE);
 
 	printf("System Initialization finished\n");
+
+	while (1) {
+		/* Main task loop */
+		sleep(1);
+	}
 }
