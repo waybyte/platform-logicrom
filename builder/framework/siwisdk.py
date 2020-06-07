@@ -115,6 +115,9 @@ env.Append(
         "-Wall",
         "-mthumb",
         "-mthumb-interwork",
+    ],
+
+    CFLAGS=[
         "-std=gnu11"
     ],
 
