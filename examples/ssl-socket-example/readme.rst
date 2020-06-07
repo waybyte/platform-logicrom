@@ -21,3 +21,51 @@ How to build
 
    # Upload Project
    $ platformio run --target upload
+
+Example Output
+--------------
+
+.. code-block::
+
+	(c) 2020 SiWi
+	Firmware Lib v6.49 0b5247c - Build Jun  7 2020 14:10:11
+	Core firmware: SC20UCB01A02_SIWI_759fd68
+	System Initialized
+	SYSTEM: GSM NW State: 2
+	NETWORK: SIM card ready
+	  ______ _ _  _  _ _
+	 / _____|_|_)(_)(_|_)
+	( (____  _ _  _  _ _
+	 \____ \| | || || | |
+	 _____) ) | || || | |
+	(______/|_|\_____/|_|
+
+
+	Please login to access console
+	Username: SYSTEM: GSM NW State: 5
+	NETWORK: GSM - Registered
+	NETWORK: GPRS - Registered
+	NETWORK: GPRS Active 1110
+	Socket send status: 12
+	SSL socket read (12 bytes):
+	Hello World
+
+	Socket send status: 12
+	SSL socket read (12 bytes):
+	Hello World
+
+	Socket send status: 12
+	SSL socket read (12 bytes):
+	Hello World
+
+	Socket send status: 12
+	SSL socket read (12 bytes):
+	Hello World
+
+	Socket send status: 12
+	SSL socket read (12 bytes):
+	Hello World
+
+	Socket send status: 12
+	SSL socket read (12 bytes):
+	Hello World
