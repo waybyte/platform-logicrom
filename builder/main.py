@@ -36,7 +36,9 @@ env.Replace(
     SIWIFLASHER=join(platform.get_package_dir(
         "tool-siwiflasher") or "", "siwiflasher"),
     REFLASH_FLAGS=[
-        "-r"
+        "-r",
+        "-b", "$UPLOAD_SPEED",
+        "-p", '"$UPLOAD_PORT"',
     ],
     REFLASH_CMD='"$SIWIFLASHER" $REFLASH_FLAGS'
 )
