@@ -9,7 +9,7 @@
 		"type": "git",
 		"url": "https://github.com/siwiembedded/platform-siwigsm.git"
 	},
-	"version": "v0.2.0",
+	"version": "0.2.1",
 	"vendor": "SiWi Embedded Solutions Pvt. Ltd.",
 	"packageRepositories": [
 		"https://dl.bintray.com/platformio/dl-packages/manifest.json",
@@ -36,5 +36,8 @@
 			"optional": true,
 			"version": "~1.1.0"
 		}
+	},
+	"pythonPackages": {
+		"pyserial": ">=3.4"
 	}
 }
