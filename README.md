@@ -13,7 +13,7 @@
 3. Install SiWi GSM Platform:
 	* Open PlatformIO Home
 	* Go to Platforms -> Advanced Installation
-	* Paste repository link https://github.com/siwiembedded/siwigsm.git
+	* Paste repository link https://github.com/siwiembedded/platform-siwigsm.git
 	* Click Install
 
 ## Examples
@@ -22,6 +22,7 @@
 * [adc-example](https://github.com/siwiembedded/platform-siwigsm/tree/master/examples/adc-example) - ADC Read Example
 * [socket-example](https://github.com/siwiembedded/platform-siwigsm/tree/master/examples/socket-example) - TCP Socket example using RAW Socket APIs
 * [ssl-socket-example](https://github.com/siwiembedded/platform-siwigsm/tree/master/examples/ssl-socket-example) - SSL Socket example
+* [ssl-socket-clientauth](https://github.com/siwiembedded/platform-siwigsm/tree/master/examples/ssl-socket-clientauth) - SSL Socket example with client certificate authentication
 
 ## Resources
 
