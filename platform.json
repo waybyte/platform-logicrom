@@ -9,7 +9,7 @@
 		"type": "git",
 		"url": "https://github.com/siwiembedded/platform-siwigsm.git"
 	},
-	"version": "0.2.1",
+	"version": "0.3.0",
 	"vendor": "SiWi Embedded Solutions Pvt. Ltd.",
 	"packageRepositories": [
 		"https://dl.bintray.com/platformio/dl-packages/manifest.json",
@@ -29,12 +29,12 @@
 		},
 		"framework-siwisdk": {
 			"type": "framework",
-			"version": "~0.3.0"
+			"version": "~0.4.0"
 		},
 		"tool-siwiflasher": {
 			"type": "uploader",
 			"optional": true,
-			"version": "~1.1.0"
+			"version": "~1.2.0"
 		}
 	},
 	"pythonPackages": {
