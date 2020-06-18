@@ -10,6 +10,7 @@ jobs:
         os: [ubuntu-18.04, windows-latest, macos-latest]
         python-version: [3.7]
         example:
+          - "examples/arduino-blink"
           - "examples/gpio-blink"
           - "examples/adc-example"
           - "examples/socket-example"
