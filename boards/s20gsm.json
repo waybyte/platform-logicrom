@@ -14,7 +14,13 @@
 			]
 		]
 	},
+	"connectivity": [
+		"GSM",
+		"Bluetooth",
+		"GPS"
+	],
 	"frameworks": [
+		"arduino",
 		"siwisdk"
 	],
 	"name": "S20 GSM Module",
