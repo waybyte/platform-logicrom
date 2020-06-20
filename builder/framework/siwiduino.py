@@ -141,14 +141,14 @@ env.Append(
         ("F_CPU", "$BOARD_F_CPU"),
 		("ARDUINO", 10813),
 		"ARDUINO_ARCH_ARM",
-        ("ARDUINO_VARIANT", '\\"%s\\"' % env.BoardConfig().get("build.variant").replace('"', "")),
-        ("ARDUINO_BOARD", '\\"%s\\"' % env.BoardConfig().get("name").replace('"', ""))
+        ("ARDUINO_VARIANT", '\\"%s\\"' % board.get("build.variant").replace('"', "")),
+        ("ARDUINO_BOARD", '\\"%s\\"' % board.get("name").replace('"', ""))
     ],
 
     CPPPATH=[
-        join(FRAMEWORK_DIR, "cores", "siwigsm", "siwisdk", "include"),
-        join(FRAMEWORK_DIR, "cores", "siwigsm", "siwisdk", "include", "ril"),
-        join(FRAMEWORK_DIR, "cores", "siwigsm")
+        join(FRAMEWORK_DIR, "cores", board.get("build.core"), "siwisdk", "include"),
+        join(FRAMEWORK_DIR, "cores", board.get("build.core"), "siwisdk", "include", "ril"),
+        join(FRAMEWORK_DIR, "cores", board.get("build.core"))
     ],
 
     LINKFLAGS=[
@@ -163,11 +163,12 @@ env.Append(
         "-nostartfiles",
         "-nodefaultlibs",
         "-u", "main",
-        "-T", "linkerscript.ld"
+        "-T", "linkerscript.ld",
+        "-Wl,--defsym,platform_init=platform_%s_init" % board.get("build.variant")
     ],
 
     LIBPATH=[
-        join(FRAMEWORK_DIR, "cores", "siwigsm", "siwisdk", "lib")
+        join(FRAMEWORK_DIR, "cores", board.get("build.core"), "siwisdk", "lib")
     ],
 
     LIBS=[
@@ -233,14 +234,14 @@ if "build.variant" in env.BoardConfig():
     )
     libs.append(env.BuildLibrary(
         join("$BUILD_DIR", "FrameworkArduinoVariant"),
-        join(FRAMEWORK_DIR, "variants", env.BoardConfig().get("build.variant"))
+        join(FRAMEWORK_DIR, "variants", board.get("build.variant"))
     ))
 
 envsafe = env.Clone()
 
 libs.append(envsafe.BuildLibrary(
     join("$BUILD_DIR", "FrameworkArduino"),
-    join(FRAMEWORK_DIR, "cores", "siwigsm")
+    join(FRAMEWORK_DIR, "cores", board.get("build.core"))
 ))
 
 env.Prepend(LIBS=libs)
