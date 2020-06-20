@@ -1,0 +1,29 @@
+{
+	"build": {
+		"core": "siwigsm",
+		"cpu": "arm9ejs",
+		"f_cpu": "260000000L",
+		"mcu": "MT6261",
+		"variant": "m66",
+		"newlib": "nano",
+		"siwilib": "release",
+		"extra_flags": "-DPLATFORM_M66=1"
+	},
+	"connectivity": [
+		"gsm",
+		"bluetooth"
+	],
+	"frameworks": [
+		"arduino",
+		"siwisdk"
+	],
+	"name": "Quectel M66",
+	"upload": {
+		"maximum_ram_size": 96256,
+		"maximum_size": 262144,
+		"require_upload_port": true,
+		"speed": 460800
+	},
+	"url": "https://www.quectel.com/product/m66.htm",
+	"vendor": "Quectel Wireless Solutions Co., Ltd."
+}

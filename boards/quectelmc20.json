@@ -1,0 +1,30 @@
+{
+	"build": {
+		"core": "siwigsm",
+		"cpu": "arm9ejs",
+		"f_cpu": "260000000L",
+		"mcu": "MT2503",
+		"variant": "mc60",
+		"newlib": "nano",
+		"siwilib": "release",
+		"extra_flags": "-DPLATFORM_MC60=1"
+	},
+	"connectivity": [
+		"gsm",
+		"bluetooth",
+		"gps"
+	],
+	"frameworks": [
+		"arduino",
+		"siwisdk"
+	],
+	"name": "Quectel MC20",
+	"upload": {
+		"maximum_ram_size": 96256,
+		"maximum_size": 262144,
+		"require_upload_port": true,
+		"speed": 460800
+	},
+	"url": "https://www.quectel.com/cn/product/mc20.htm",
+	"vendor": "Quectel Wireless Solutions Co., Ltd."
+}
