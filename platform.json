@@ -1,7 +1,7 @@
 {
 	"name": "siwigsm",
 	"title": "SIWI GSM Platform",
-	"description": "GSM development platform for MT2503 SoC.",
+	"description": "Development Platform for GSM SoC: MT2503 and MT6261",
 	"url": "http://siwi.in/",
 	"homepage": "http://siwi.in",
 	"license": "MIT",
@@ -9,7 +9,7 @@
 		"type": "git",
 		"url": "https://github.com/siwiembedded/platform-siwigsm.git"
 	},
-	"version": "0.3.0",
+	"version": "0.4.0",
 	"vendor": "SiWi Embedded Solutions Pvt. Ltd.",
 	"packageRepositories": [
 		"https://dl.bintray.com/platformio/dl-packages/manifest.json",
