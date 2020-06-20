@@ -150,7 +150,8 @@ env.Append(
         "-nostartfiles",
         "-nostdlib",
         "-nostartfiles",
-        "-nodefaultlibs"
+        "-nodefaultlibs",
+        "-Wl,--defsym,platform_init=platform_%s_init" % board.get("build.variant")
     ],
 
     LIBS=["siwisdk", "c", "gcc", "m"],
