@@ -3,7 +3,7 @@
 		"core": "siwigsm",
 		"cpu": "arm9ejs",
 		"f_cpu": "260000000L",
-		"mcu": "MT2503",
+		"mcu": "MT6261",
 		"variant": "s20u",
 		"newlib": "nano",
 		"siwilib": "release",
