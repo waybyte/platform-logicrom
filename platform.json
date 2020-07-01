@@ -44,6 +44,11 @@
 			"type": "uploader",
 			"optional": true,
 			"version": "~1.3.0"
+		},
+		"tool-pysiwiflasher": {
+			"type": "uploader",
+			"optional": true,
+			"version": "~0.2.0"
 		}
 	},
 	"pythonPackages": {

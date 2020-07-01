@@ -32,16 +32,26 @@ env.Replace(
     SIZECHECKCMD="$SIZETOOL -A -d $SOURCES",
     SIZEPRINTCMD='$SIZETOOL -B -d $SOURCES',
 
-    PROGSUFFIX=".elf",
-    SIWIFLASHER=join(platform.get_package_dir(
-        "tool-siwiflasher") or "", "siwiflasher"),
-    REFLASH_FLAGS=[
-        "-r",
-        "-b", "$UPLOAD_SPEED",
-        "-p", '"$UPLOAD_PORT"',
-    ],
-    REFLASH_CMD='"$SIWIFLASHER" $REFLASH_FLAGS'
+    PROGSUFFIX=".elf"
 )
+
+# Setup tools based on system type
+if "windows" in util.get_systype():
+    env.Replace(
+        SIWIFLASHER=join(platform.get_package_dir("tool-siwiflasher") or "", "siwiflasher"),
+        REFLASH_FLAGS=[
+            "-r",
+            "-b", "$UPLOAD_SPEED",
+            "-p", '"$UPLOAD_PORT"',
+        ],
+        REFLASH_CMD='"$SIWIFLASHER" $REFLASH_FLAGS'
+    )
+else:
+    env.Replace(
+        SIWIFLASHER='"$PYTHONEXE"' + join(platform.get_package_dir(
+            "tool-pysiwiflasher") or "", "siwiflasher.py"),
+        REFLASH_CMD="echo Sorry! Reflashing is only supported on windows!"
+    )
 
 # Allow user to override via pre:script
 if env.get("PROGNAME", "program") == "program":
@@ -102,7 +112,7 @@ env.Replace(
 upload_source = target_firm
 upload_actions = [env.VerboseAction("$UPLOADCMD", "Uploading $SOURCE")]
 
-if env.subst("$UPLOAD_PORT") == "":
+if "windows" not in util.get_systype() and env.subst("$UPLOAD_PORT") == "":
     env.Append(
         UPLOADERFLAGS=[
             "-u"
