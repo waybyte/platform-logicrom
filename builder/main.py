@@ -5,6 +5,7 @@
 
 import sys
 from platform import system
+from platformio.util import get_systype
 from os import makedirs
 from os.path import basename, isdir, join
 
@@ -36,7 +37,7 @@ env.Replace(
 )
 
 # Setup tools based on system type
-if "windows" in util.get_systype():
+if "windows" in get_systype():
     env.Replace(
         SIWIFLASHER=join(platform.get_package_dir("tool-siwiflasher") or "", "siwiflasher"),
         REFLASH_FLAGS=[
@@ -112,7 +113,7 @@ env.Replace(
 upload_source = target_firm
 upload_actions = [env.VerboseAction("$UPLOADCMD", "Uploading $SOURCE")]
 
-if "windows" not in util.get_systype() and env.subst("$UPLOAD_PORT") == "":
+if "windows" not in get_systype() and env.subst("$UPLOAD_PORT") == "":
     env.Append(
         UPLOADERFLAGS=[
             "-u"
