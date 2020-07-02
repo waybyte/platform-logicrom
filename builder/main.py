@@ -113,7 +113,7 @@ env.Replace(
 upload_source = target_firm
 upload_actions = [env.VerboseAction("$UPLOADCMD", "Uploading $SOURCE")]
 
-if "windows" not in get_systype() and env.subst("$UPLOAD_PORT") == "":
+if "windows" in get_systype() and env.subst("$UPLOAD_PORT") == "":
     env.Append(
         UPLOADERFLAGS=[
             "-u"
@@ -122,6 +122,9 @@ if "windows" not in get_systype() and env.subst("$UPLOAD_PORT") == "":
             "-u"
         ]
     )
+else:
+    upload_actions.insert(0, env.VerboseAction(env.AutodetectUploadPort,
+        "Looking for upload port..."))
 
 AlwaysBuild(env.Alias("upload", upload_source, upload_actions))
 
