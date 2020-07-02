@@ -108,7 +108,7 @@ env.Replace(
         "-b", "$UPLOAD_SPEED",
         "-p", '"$UPLOAD_PORT"',
     ],
-    UPLOADCMD='"$UPLOADER" $UPLOADERFLAGS $SOURCE'
+    UPLOADCMD='$UPLOADER $UPLOADERFLAGS $SOURCE'
 )
 upload_source = target_firm
 upload_actions = [env.VerboseAction("$UPLOADCMD", "Uploading $SOURCE")]
