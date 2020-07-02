@@ -15,6 +15,7 @@ from SCons.Script import (ARGUMENTS, COMMAND_LINE_TARGETS, AlwaysBuild,
 env = DefaultEnvironment()
 platform = env.PioPlatform()
 board = env.BoardConfig()
+flasher_path = platform.get_package_dir("tool-siwiflasher") or ""
 
 env.Replace(
     AR="arm-none-eabi-ar",
@@ -39,7 +40,7 @@ env.Replace(
 # Setup tools based on system type
 if "windows" in get_systype():
     env.Replace(
-        SIWIFLASHER=join(platform.get_package_dir("tool-siwiflasher") or "", "siwiflasher"),
+        SIWIFLASHER=join(flasher_path, "siwiflasher"),
         REFLASH_FLAGS=[
             "-r",
             "-b", "$UPLOAD_SPEED",
@@ -49,9 +50,8 @@ if "windows" in get_systype():
     )
 else:
     env.Replace(
-        SIWIFLASHER='"$PYTHONEXE"' + join(platform.get_package_dir(
-            "tool-pysiwiflasher") or "", "siwiflasher.py"),
-        REFLASH_CMD="echo Sorry! Reflashing is only supported on windows!"
+        SIWIFLASHER='"$PYTHONEXE" ' + join(flasher_path, "siwiflasher.py"),
+        REFLASH_CMD='echo "Sorry! Reflashing is only supported on windows! :("'
     )
 
 # Allow user to override via pre:script
