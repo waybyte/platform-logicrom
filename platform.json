@@ -2,33 +2,46 @@
 	"name": "siwigsm",
 	"title": "SIWI GSM Platform",
 	"description": "Development Platform for GSM SoC: MT2503 and MT6261",
-	"url": "http://siwi.in/",
-	"homepage": "http://siwi.in",
+	"url": "https://siwi.in/",
+	"homepage": "https://help.siwi.in/",
 	"license": "MIT",
+	"keywords": [
+		"dev-platform",
+		"GSM",
+		"Quectel",
+		"MT2621",
+		"MT2503",
+		"GSM IoT"
+	],
+	"engines": {
+		"platformio": "^5"
+	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/siwiembedded/platform-siwigsm.git"
 	},
-	"version": "0.4.0",
+	"version": "0.5.0",
 	"vendor": "SiWi Embedded Solutions Pvt. Ltd.",
-	"packageRepositories": [
-		"https://dl.bintray.com/platformio/dl-packages/manifest.json",
-		"http://dl.platformio.org/packages/manifest.json",
-		"https://siwiembedded.github.io/manifest.json"
-	],
 	"frameworks": {
 		"siwisdk": {
 			"package": "framework-siwisdk",
-			"script": "builder/framework/siwisdk.py"
+			"script": "builder/framework/siwisdk.py",
+			"description": "Arduino Wiring-based Framework For SiWi and Quectel GSM Modules",
+			"homepage": "https://github.com/siwiembedded/siwisdk",
+			"title": "SIWI GSM Software Development Kit for MT6261 and MT2503 SoC"
 		},
 		"arduino": {
 			"package": "framework-siwiduino",
-			"script": "builder/framework/siwiduino.py"
+			"script": "builder/framework/siwiduino.py",
+			"description": "Arduino Wiring-based Framework For SiWi and Quectel GSM Modules",
+			"homepage": "https://github.com/siwiembedded/siwiduino",
+			"title": "Arduino Framework"
 		}
 	},
 	"packages": {
 		"toolchain-gccarmnoneeabi": {
 			"type": "toolchain",
+			"owner": "platformio",
 			"version": "~1.80201.0"
 		},
 		"framework-siwisdk": {
