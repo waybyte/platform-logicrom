@@ -166,7 +166,7 @@ static void socket_task(void *arg)
 		}
 
 		/* Check if socket not connected */
-		if (ssl_socket_geterror(socket_id) != SOCK_STA_CONNECTED) {
+		if (ssl_socket_getstatus(socket_id) != SOCK_STA_CONNECTED) {
 			/* Initiate SSL socket connection */
 			ret = ssl_socket_open(socket_id);
 			if (ret < 0)
