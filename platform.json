@@ -26,9 +26,9 @@
 		"siwisdk": {
 			"package": "framework-siwisdk",
 			"script": "builder/framework/siwisdk.py",
-			"description": "Arduino Wiring-based Framework For SiWi and Quectel GSM Modules",
+			"description": "SIWI GSM Software Development Kit for MT6261 and MT2503 SoC",
 			"homepage": "https://github.com/siwiembedded/siwisdk",
-			"title": "SIWI GSM Software Development Kit for MT6261 and MT2503 SoC"
+			"title": "SIWIGSM IoT SDK"
 		},
 		"arduino": {
 			"package": "framework-siwiduino",
