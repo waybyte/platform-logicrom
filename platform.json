@@ -1,16 +1,18 @@
 {
 	"name": "siwigsm",
-	"title": "SIWI GSM Platform",
-	"description": "Development Platform for GSM SoC: MT2503 and MT6261",
+	"title": "SIWI GSM & NBIoT Platform",
+	"description": "Development Platform for GSM & NBIoT SoC",
 	"url": "https://siwi.in/",
 	"homepage": "https://help.siwi.in/",
 	"license": "MIT",
 	"keywords": [
 		"dev-platform",
 		"GSM",
+		"NBIoT",
 		"Quectel",
 		"MT2621",
 		"MT2503",
+		"MT2625",
 		"GSM IoT"
 	],
 	"engines": {
@@ -20,7 +22,7 @@
 		"type": "git",
 		"url": "https://github.com/siwiembedded/platform-siwigsm.git"
 	},
-	"version": "0.5.0",
+	"version": "0.6.0",
 	"vendor": "SiWi Embedded Solutions Pvt. Ltd.",
 	"frameworks": {
 		"siwisdk": {
@@ -28,7 +30,7 @@
 			"script": "builder/framework/siwisdk.py",
 			"description": "SIWI GSM Software Development Kit for MT6261, MT2503 and MT2625 SoC",
 			"homepage": "https://github.com/siwiembedded/siwisdk",
-			"title": "SIWIGSM IoT SDK"
+			"title": "SIWI GSM & NBIoT SDK"
 		},
 		"arduino": {
 			"package": "framework-siwiduino",
