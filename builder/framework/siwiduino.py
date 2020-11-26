@@ -58,15 +58,18 @@ def gen_bin_file(target, source, env):
         0x00, 0x00, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF,
         0x40, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
         0x40, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00,
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x22,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
     ])
     firm_size = (getsize(temp_firm) + 64).to_bytes(4, "little")
     GFH_Header[0x20:0x23] = firm_size[0:3]
 
     with open(target_firm.get_abspath(), "wb") as out_firm:
         with open(temp_firm, "rb") as in_firm:
+            buf = in_firm.read()
+            crc32 = zlib.crc32(buf).to_bytes(4, "little")
+            GFH_Header[0x3C:] = crc32
             out_firm.write(GFH_Header)
-            out_firm.write(in_firm.read())
+            out_firm.write(buf)
             in_firm.close()
         out_firm.close()
         remove(temp_firm)
