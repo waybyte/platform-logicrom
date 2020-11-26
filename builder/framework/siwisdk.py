@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: MIT
 #
 
-from os.path import isdir, isfile, join, dirname
+from os.path import abspath, isdir, isfile, join, dirname, getsize
 from os import remove
 from shutil import copyfile
 from hashlib import md5
@@ -41,7 +41,7 @@ def gen_bin_file(target, source, env):
     (target_firm, ) = target
     (target_elf, ) = source
 
-    temp_firm = os.path.dirname(target_firm.get_abspath()) + "/temp.bin"
+    temp_firm = dirname(target_firm.get_abspath()) + "/temp.bin"
     cmd.extend(["-O", "binary"])
     cmd.append(target_elf.get_abspath())
     cmd.append(temp_firm)
@@ -57,7 +57,7 @@ def gen_bin_file(target, source, env):
         0x40, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00,
         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
     ])
-    firm_size = (os.path.getsize(temp_firm) + 64).to_bytes(4, "little")
+    firm_size = (getsize(temp_firm) + 64).to_bytes(4, "little")
     GFH_Header[0x20:0x23] = firm_size[0:3]
 
     with open(target_firm.get_abspath(), "wb") as out_firm:
@@ -74,7 +74,7 @@ def gen_bin_file(target, source, env):
         remove(temp_firm)
 
 def gen_fota_file(target, source, env):
-    if env.BoardConfig.get("build.mcu") == "MT2625":
+    if env.BoardConfig().get("build.mcu") == "MT2625":
         print("Use http://dfota.quectel.com:8081/ to Generate FOTA Patch file")
         return
 
@@ -94,7 +94,7 @@ def gen_fota_file(target, source, env):
         0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
         0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00
     ])
-    firm_size = os.path.getsize(firm_bin.get_abspath()).to_bytes(4, "little")
+    firm_size = getsize(firm_bin.get_abspath()).to_bytes(4, "little")
     FOTA_Header[0x1c:0x1f] = firm_size[0:3]
     crc = fota_crc16(FOTA_Header, len(FOTA_Header) - 4).to_bytes(4, "little")
     FOTA_Header[0x4c:0x4f] = crc[0:3]

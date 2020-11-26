@@ -78,7 +78,7 @@ def gen_bin_file(target, source, env):
         remove(temp_firm)
 
 def gen_fota_file(target, source, env):
-    if env.BoardConfig.get("build.mcu") == "MT2625":
+    if env.BoardConfig().get("build.mcu") == "MT2625":
         print("Use http://dfota.quectel.com:8081/ to Generate FOTA Patch file")
         return
 
