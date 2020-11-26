@@ -3,8 +3,8 @@
 # SPDX-License-Identifier: MIT
 #
 
-import os
 from os.path import isdir, isfile, join, dirname
+from os import remove
 from shutil import copyfile
 from hashlib import md5
 import zlib
@@ -63,15 +63,21 @@ def gen_bin_file(target, source, env):
     with open(target_firm.get_abspath(), "wb") as out_firm:
         with open(temp_firm, "rb") as in_firm:
             buf = in_firm.read()
+            if env.BoardConfig().get("build.mcu") == "MT2625":
+                GFH_Header[0x1C:0x20] = [0x00, 0x40, 0x2D, 0x80]
             crc32 = zlib.crc32(buf).to_bytes(4, "little")
             GFH_Header[0x3C:] = crc32
             out_firm.write(GFH_Header)
             out_firm.write(buf)
             in_firm.close()
         out_firm.close()
-        os.remove(temp_firm)
+        remove(temp_firm)
 
 def gen_fota_file(target, source, env):
+    if env.BoardConfig.get("build.mcu") == "MT2625":
+        print("Use http://dfota.quectel.com:8081/ to Generate FOTA Patch file")
+        return
+
     (fota_firm, ) = target
     (firm_bin, ) = source
     # 0x1c : Filesize
@@ -111,8 +117,6 @@ env.Append(
     CCFLAGS=[
         "-Os",  # optimize for size
         "-g",
-        "-march=armv5te",
-        "-mfloat-abi=soft",
         "-fmessage-length=0",
         "-ffunction-sections",  # place each function in its own section
         "-fdata-sections",
@@ -131,7 +135,7 @@ env.Append(
         "-fno-rtti",
         "-fno-exceptions",
         "-fno-use-cxa-atexit",
-        "-fno-threadsafe-statics"
+        "-fno-threadsafe-statics",
     ],
 
     CPPDEFINES=[
@@ -145,10 +149,8 @@ env.Append(
     ],
 
     LINKFLAGS=[
-        "-march=armv5te",
         "-mthumb",
         "-mthumb-interwork",
-        "-mfloat-abi=soft",
         "-Os",
         "-Wl,--gc-sections,--relax",
         "-nostartfiles",
@@ -158,12 +160,14 @@ env.Append(
         "-Wl,--defsym,platform_init=platform_%s_init" % board.get("build.variant")
     ],
 
-    LIBS=["siwisdk", "c", "gcc", "m"],
-    LDSCRIPT_PATH=join(FRAMEWORK_DIR, "lib", "linkerscript.ld"),
+    LIBS=["c", "gcc", "m"],
+
     LIBPATH=[
         join(FRAMEWORK_DIR, "lib")
     ],
+
     LIBSOURCE_DIRS=[join(FRAMEWORK_DIR, "libraries")],
+
     BUILDERS=dict(
         ElfToBin=Builder(
             action=env.VerboseAction(gen_bin_file, "Generating $TARGET"),
@@ -176,15 +180,61 @@ env.Append(
     )
 )
 
-if board.get("build.newlib") == "nano":
+if board.get("build.mcu") != "MT2625":
+    #Flags specific to MT2503/MT6261
+    env.Prepend(
+        CCFLAGS=[
+            "-march=armv5te",
+            "-mfloat-abi=soft",
+        ],
+
+        LINKFLAGS=[
+            "-march=armv5te",
+            "-mfloat-abi=soft",
+            "-T", "linkerscript.ld",
+        ],
+
+        LIBS=[
+            "siwisdk",
+        ],
+    )
+else:
+    #Flags specific to MT2625
+    env.Prepend(
+        CCFLAGS=[
+            "-mcpu=cortex-m4",
+            "-mfloat-abi=hard",
+            "-mfpu=fpv4-sp-d16",
+            "-mno-unaligned-access",
+        ],
+
+        CPPDEFINES=[
+            ("PLATFORM_NBIOT", 1),
+            ("_REENT_SMALL"),
+        ],
+
+        LINKFLAGS=[
+            "-mcpu=cortex-m4",
+            "-mfloat-abi=hard",
+            "-mfpu=fpv4-sp-d16",
+            "-mno-unaligned-access",
+            "-T", "linkerscript_nbiot.ld",
+            "--specs=nano.specs",
+            "--specs=nosys.specs",
+        ],
+
+        LIBS=[
+            "siwinbiotsdk",
+        ],
+    )
+
+if board.get("build.mcu") != "MT2625" and board.get("build.newlib") == "nano":
     env.Append(
         LINKFLAGS=[
             "--specs=nano.specs",
-            "-u",
-            "_printf_float",
-            "-u",
-            "_scanf_float",
-            "--specs=nosys.specs"
+            "-u", "_printf_float",
+            "-u", "_scanf_float",
+            "--specs=nosys.specs",
         ]
     )
 
@@ -193,8 +243,8 @@ env.Append(ASFLAGS=env.get("CCFLAGS", [])[:])
 
 def load_siwilib_debug():
     for i, libs in enumerate(env["LIBS"]):
-        if libs == "siwisdk":
-            env["LIBS"][i] = "siwisdk_debug"
+        if libs.startswith("siwisdk") or libs.startswith("siwinbiot"):
+            env["LIBS"][i] = libs + "_debug"
 
 if board.get("build.siwilib") == "debug":
     load_siwilib_debug()

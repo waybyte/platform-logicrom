@@ -26,7 +26,7 @@
 		"siwisdk": {
 			"package": "framework-siwisdk",
 			"script": "builder/framework/siwisdk.py",
-			"description": "SIWI GSM Software Development Kit for MT6261 and MT2503 SoC",
+			"description": "SIWI GSM Software Development Kit for MT6261, MT2503 and MT2625 SoC",
 			"homepage": "https://github.com/siwiembedded/siwisdk",
 			"title": "SIWIGSM IoT SDK"
 		},
