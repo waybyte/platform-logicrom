@@ -45,6 +45,11 @@ def gen_bin_file(target, source, env):
     (target_firm, ) = target
     (target_elf, ) = source
 
+    flash_addr = {
+        "bc20": [0x00, 0x40, 0x2D, 0x08],
+        "6261": [0x00, 0x00, 0x2E, 0x10],
+    }
+
     temp_firm = dirname(target_firm.get_abspath()) + "/temp.bin"
     cmd.extend(["-O", "binary"])
     cmd.append(target_elf.get_abspath())
@@ -67,8 +72,8 @@ def gen_bin_file(target, source, env):
     with open(target_firm.get_abspath(), "wb") as out_firm:
         with open(temp_firm, "rb") as in_firm:
             buf = in_firm.read()
-            if env.BoardConfig().get("build.mcu") == "MT2625":
-                GFH_Header[0x1C:0x20] = [0x00, 0x40, 0x2D, 0x80]
+            GFH_Header[0x1C:0x20] = flash_addr.get(env.BoardConfig().get(
+                "build.variant"), flash_addr['6261'])
             crc32 = zlib.crc32(buf).to_bytes(4, "little")
             GFH_Header[0x3C:] = crc32
             out_firm.write(GFH_Header)
@@ -79,7 +84,7 @@ def gen_bin_file(target, source, env):
 
 def gen_fota_file(target, source, env):
     if env.BoardConfig().get("build.mcu") == "MT2625":
-        print("Use http://dfota.quectel.com:8081/ to Generate FOTA Patch file")
+        print("\nUse http://dfota.quectel.com:8081/ to Generate FOTA Patch file\n")
         return
 
     (fota_firm, ) = target
