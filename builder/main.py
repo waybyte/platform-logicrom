@@ -17,7 +17,12 @@ platform = env.PioPlatform()
 board = env.BoardConfig()
 flasher_path = platform.get_package_dir("tool-siwiflasher") or ""
 
+def _get_board_mcu():
+    return board.get("build.mcu")
+
 env.Replace(
+    __get_board_mcu=_get_board_mcu,
+
     AR="arm-none-eabi-ar",
     AS="arm-none-eabi-as",
     CC="arm-none-eabi-gcc",
@@ -38,7 +43,7 @@ env.Replace(
 )
 
 # Setup tools based on system type
-if "windows" in get_systype():
+if "windows" in get_systype() and board.get("build.mcu") != "MT2625":
     env.Replace(
         SIWIFLASHER=join(flasher_path, "siwiflasher"),
         REFLASH_FLAGS=[
@@ -113,7 +118,14 @@ env.Replace(
 upload_source = target_firm
 upload_actions = [env.VerboseAction("$UPLOADCMD", "Uploading $SOURCE")]
 
-if "windows" in get_systype() and env.subst("$UPLOAD_PORT") == "":
+if "windows" not in get_systype() or board.get("build.mcu") == "MT2625":
+    env.Append(
+        UPLOADERFLAGS=[
+            "-m", '"${__get_board_mcu()}"',
+        ]
+    )
+
+if "windows" in get_systype() and board.get("build.mcu") != "MT2625" and env.subst("$UPLOAD_PORT") == "":
     env.Append(
         UPLOADERFLAGS=[
             "-u"
