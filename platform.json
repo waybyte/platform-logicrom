@@ -13,7 +13,8 @@
 		"MT2621",
 		"MT2503",
 		"MT2625",
-		"GSM IoT"
+		"GSM IoT",
+		"SIMCOM"
 	],
 	"engines": {
 		"platformio": "^5"
@@ -22,7 +23,7 @@
 		"type": "git",
 		"url": "https://github.com/siwiembedded/platform-siwigsm.git"
 	},
-	"version": "0.6.0",
+	"version": "0.7.0",
 	"vendor": "SiWi Embedded Solutions Pvt. Ltd.",
 	"frameworks": {
 		"siwisdk": {
@@ -48,7 +49,7 @@
 		},
 		"framework-siwisdk": {
 			"type": "framework",
-			"version": "~0.6.0"
+			"version": "~0.7.0"
 		},
 		"framework-siwiduino": {
 			"type": "framework",
@@ -58,7 +59,7 @@
 		"tool-siwiflasher": {
 			"type": "uploader",
 			"optional": true,
-			"version": "~2.1.0"
+			"version": "~2.2.0"
 		}
 	},
 	"pythonPackages": {
