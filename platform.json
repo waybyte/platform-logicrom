@@ -1,7 +1,7 @@
 {
 	"name": "logicrom",
 	"title": "LOGICROM Development Platform",
-	"description": "Development Platform for 4G LTE, GSM & NBIoT SoCs (MT6261, MT2503 and MT2625)",
+	"description": "Development Platform for 4G LTE, GSM & NBIoT Chipsets",
 	"url": "https://logicrom.com/",
 	"homepage": "https://logicrom.com/",
 	"license": "MIT",
@@ -23,7 +23,7 @@
 		"type": "git",
 		"url": "https://github.com/waybyte/platform-logicrom.git"
 	},
-	"version": "0.7.0",
+	"version": "0.8.0",
 	"vendor": "WAYBYTE Solutions",
 	"frameworks": {
 		"siwisdk": {
