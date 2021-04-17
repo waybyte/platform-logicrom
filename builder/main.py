@@ -1,4 +1,4 @@
-# Copyright 2020 SiWi Embedded Solutions Pvt. Ltd.
+# Copyright 2021 WAYBYTE Solutions
 #
 # SPDX-License-Identifier: MIT
 #

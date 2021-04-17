@@ -3,14 +3,14 @@ How to build
 
 1. Install `Visual Studio Code <https://code.visualstudio.com/>`_
 2. Install `PlatformIO Extension for VSCode <https://platformio.org/platformio-ide>`_
-3. Install SiWi GSM Platform:
+3. Install LOGICROM Platform:
 
    * Open PlatformIO Home
    * Go to Platforms -> Advanced Installation
-   * Paste repository link https://github.com/siwiembedded/platform-siwigsm.git
+   * Paste repository link https://github.com/waybyte/platform-logicrom.git
    * Click Install
 
-4. Download and Extract examples from github https://github.com/siwiembedded/platform-siwigsm/archive/master.zip
+4. Download and Extract examples from github https://github.com/waybyte/platform-logicrom/archive/master.zip
 5. Extract and Open example folder with *VSCode*
 6. Run following command:
 
@@ -27,7 +27,7 @@ Example Output
 
 .. code-block::
 
-	(c) 2020 SiWi
+	(c) 2021 WAYBYTE
 	Firmware Lib v6.49 0b5247c - Build Jun  7 2020 14:10:11
 	Core firmware: SC20UCB01A02_SIWI_759fd68
 	System Ready
