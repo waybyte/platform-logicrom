@@ -14,7 +14,7 @@
 #include <os_api.h>
 
 #include <network.h>
-#include <siwi/sockets.h>
+#include <net/sockets.h>
 
 /**
  * Server IP
@@ -273,7 +273,7 @@ int main(void)
 	/*
 	 * Initialize library and Setup STDIO
 	 */
-	siwilib_init("/dev/ttyS0", urc_callback);
+	logicrom_init("/dev/ttyS0", urc_callback);
 	/* Start GPRS service */
 	network_gprsenable(TRUE);
 

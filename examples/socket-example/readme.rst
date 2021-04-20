@@ -27,20 +27,13 @@ Example Output
 
 .. code-block::
 
-	(c) 2020 WAYBYTE
-	Firmware Lib v6.49 0b5247c - Build Jun  7 2020 14:10:11
-	Core firmware: SC20UCB01A02_SIWI_759fd68
+	(c) 2021 WAYBYTE
+	LOGICROM v6.62 ea61103 - Build Apr 19 2021 19:58:05
+	Core firmware: WBMT2503DV01_c70a56b
 	System Ready
 	System Initialization finished
 	SYSTEM: GSM NW State: 2
 	NETWORK: SIM card ready
-	  ______ _ _  _  _ _
-	 / _____|_|_)(_)(_|_)
-	( (____  _ _  _  _ _
-	 \____ \| | || || | |
-	 _____) ) | || || | |
-	(______/|_|\_____/|_|
-
 
 	Please login to access console
 	Username: SYSTEM: GSM NW State: 5
