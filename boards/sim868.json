@@ -6,7 +6,7 @@
 		"mcu": "MT2503",
 		"variant": "sim868",
 		"newlib": "nano",
-		"siwilib": "release",
+		"logicromtype": "release",
 		"extra_flags": "-DPLATFORM_SIM868=1",
 		"hwids": [
 			[
@@ -22,7 +22,7 @@
 	],
 	"frameworks": [
 		"arduino",
-		"siwisdk"
+		"logicromsdk"
 	],
 	"name": "SIMCOM SIM868 GSM Module",
 	"upload": {

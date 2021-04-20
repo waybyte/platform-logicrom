@@ -6,7 +6,7 @@
 		"mcu": "MT2503",
 		"variant": "s20u",
 		"newlib": "nano",
-		"siwilib": "release",
+		"logicromtype": "release",
 		"extra_flags": "-DPLATFORM_S20U=1",
 		"hwids": [
 			[
@@ -22,7 +22,7 @@
 	],
 	"frameworks": [
 		"arduino",
-		"siwisdk"
+		"logicromsdk"
 	],
 	"name": "S20 GSM Module",
 	"upload": {

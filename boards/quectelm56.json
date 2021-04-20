@@ -6,7 +6,7 @@
 		"mcu": "MT6261",
 		"variant": "s20u",
 		"newlib": "nano",
-		"siwilib": "release",
+		"logicromtype": "release",
 		"extra_flags": "-DPLATFORM_M56=1",
 		"hwids": [
 			[
@@ -22,7 +22,7 @@
 	],
 	"frameworks": [
 		"arduino",
-		"siwisdk"
+		"logicromsdk"
 	],
 	"name": "Quectel M56",
 	"upload": {

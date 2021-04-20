@@ -6,7 +6,7 @@
 		"mcu": "MT2503",
 		"variant": "mc60",
 		"newlib": "nano",
-		"siwilib": "release",
+		"logicromtype": "release",
 		"extra_flags": "-DPLATFORM_MC60=1"
 	},
 	"connectivity": [
@@ -16,7 +16,7 @@
 	],
 	"frameworks": [
 		"arduino",
-		"siwisdk"
+		"logicromsdk"
 	],
 	"name": "Quectel MC60",
 	"upload": {

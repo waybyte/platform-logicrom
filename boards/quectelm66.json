@@ -6,7 +6,7 @@
 		"mcu": "MT6261",
 		"variant": "m66",
 		"newlib": "nano",
-		"siwilib": "release",
+		"logicromtype": "release",
 		"extra_flags": "-DPLATFORM_M66=1"
 	},
 	"connectivity": [
@@ -15,7 +15,7 @@
 	],
 	"frameworks": [
 		"arduino",
-		"siwisdk"
+		"logicromsdk"
 	],
 	"name": "Quectel M66",
 	"upload": {
