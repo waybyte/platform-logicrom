@@ -15,7 +15,7 @@ env = DefaultEnvironment()
 platform = env.PioPlatform()
 board = env.BoardConfig()
 
-FRAMEWORK_DIR = platform.get_package_dir("framework-siwisdk")
+FRAMEWORK_DIR = platform.get_package_dir("framework-logicromsdk")
 assert isdir(FRAMEWORK_DIR)
 
 # Create Project Template
@@ -200,7 +200,7 @@ if board.get("build.mcu") != "MT2625":
         ],
 
         LIBS=[
-            "siwisdk",
+            "logicrom",
         ],
     )
 else:
@@ -229,7 +229,7 @@ else:
         ],
 
         LIBS=[
-            "siwinbiotsdk",
+            "logicromnbiot",
         ],
     )
 
@@ -246,13 +246,13 @@ if board.get("build.mcu") != "MT2625" and board.get("build.newlib") == "nano":
 # copy CCFLAGS to ASFLAGS (-x assembler-with-cpp mode)
 env.Append(ASFLAGS=env.get("CCFLAGS", [])[:])
 
-def load_siwilib_debug():
+def load_logicrom_debug():
     for i, libs in enumerate(env["LIBS"]):
-        if libs.startswith("siwisdk") or libs.startswith("siwinbiot"):
+        if libs.startswith("logicrom") or libs.startswith("logicromnbiot"):
             env["LIBS"][i] = libs + "_debug"
 
-if board.get("build.siwilib") == "debug":
-    load_siwilib_debug()
+if board.get("build.logicromtype") == "debug":
+    load_logicrom_debug()
 
 if env.GetBuildType() == "debug":
-    load_siwilib_debug()
+    load_logicrom_debug()

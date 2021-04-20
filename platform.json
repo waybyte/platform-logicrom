@@ -23,15 +23,15 @@
 		"type": "git",
 		"url": "https://github.com/waybyte/platform-logicrom.git"
 	},
-	"version": "0.8.0",
+	"version": "0.8.1",
 	"vendor": "WAYBYTE Solutions",
 	"frameworks": {
-		"siwisdk": {
-			"package": "framework-siwisdk",
-			"script": "builder/framework/siwisdk.py",
-			"description": "SIWI Software Development Kit for GSM & NBIoT SoCs (MT6261, MT2503 and MT2625)",
-			"homepage": "https://github.com/siwiembedded/siwisdk",
-			"title": "SIWI GSM & NBIoT SDK"
+		"logicromsdk": {
+			"package": "framework-logicromsdk",
+			"script": "builder/framework/logicromsdk.py",
+			"description": "LOGICROM Software Development Kit for 4G LTE, GSM and NB-IoT Modules",
+			"homepage": "https://github.com/waybyte/logicromsdk",
+			"title": "LOGICROM SDK"
 		},
 		"arduino": {
 			"package": "framework-siwiduino",
@@ -47,9 +47,9 @@
 			"owner": "platformio",
 			"version": "~1.80201.0"
 		},
-		"framework-siwisdk": {
+		"framework-logicromsdk": {
 			"type": "framework",
-			"version": "~0.7.0"
+			"version": "~0.8.0"
 		},
 		"framework-siwiduino": {
 			"type": "framework",
