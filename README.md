@@ -1,7 +1,7 @@
 # LOGICROM for Platformio
 
 ![Examples](https://github.com/waybyte/platform-logicrom/workflows/Examples/badge.svg)
-[![Documentation Status](https://readthedocs.org/projects/siwisdk/badge/?version=latest)](https://siwisdk.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/logicromsdk/badge/?version=latest)](https://docs.logicrom.com)
 [![Github Issues](https://img.shields.io/github/issues/waybyte/platform-logicrom.svg)](http://github.com/waybyte/platform-logicrom/issues)
 [![Github Releases](https://img.shields.io/github/release/waybyte/platform-logicrom.svg)](https://github.com/waybyte/platform-logicrom/releases)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/waybyte/platform-logicrom/blob/master/LICENSE)
@@ -26,7 +26,7 @@
 
 ## Resources
 
-* [Documentation](https://siwisdk.readthedocs.io/en/latest) - SIWISDK documentation for latest version
+* [Documentation](https://docs.logicrom.com) - LOGICROM SDK documentation for latest version
 * [Support](https://help.siwi.in) - For Technical support and Repairs
 
 # Supported Platforms
