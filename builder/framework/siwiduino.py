@@ -270,7 +270,8 @@ def load_siwilib_debug():
         if libs.startswith("siwisdk") or libs.startswith("siwinbiot"):
             env["LIBS"][i] = libs + "_debug"
 
-if board.get("build.siwilib") == "debug":
+
+if board.get("build.logicromtype") == "debug":
     load_siwilib_debug()
 
 if env.GetBuildType() == "debug":
