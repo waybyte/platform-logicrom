@@ -27,13 +27,12 @@
 ## Resources
 
 * [Documentation](https://docs.logicrom.com) - LOGICROM SDK documentation for latest version
-* [Support](https://help.siwi.in) - For Technical support and Repairs
 
 # Supported Platforms
 ## SIWI S20U GSM Module
 * S20U Module
 * S20 GSM development Board
-<img src="https://siwiembedded.github.io/asset/s20gsm_board.png" alt="s20 gsm board" width="50%">
+<img src="https://waybyte.github.io/asset/s20gsm_board.png" alt="s20 gsm board" width="50%">
 
 ## Quectel M66 GSM
 <img src="https://www.quectel.com/UploadImage/Product/20200304152709774.png" alt="Quectel M66" width="30%">
