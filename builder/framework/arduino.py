@@ -159,8 +159,8 @@ env.Append(
     ],
 
     CPPPATH=[
-        join(FRAMEWORK_DIR, "cores", board.get("build.core"), "siwisdk", "include"),
-        join(FRAMEWORK_DIR, "cores", board.get("build.core"), "siwisdk", "include", "ril"),
+        join(FRAMEWORK_DIR, "cores", board.get("build.core"), "logicromsdk", "include"),
+        join(FRAMEWORK_DIR, "cores", board.get("build.core"), "logicromsdk", "include", "ril"),
         join(FRAMEWORK_DIR, "cores", board.get("build.core"))
     ],
 
@@ -178,7 +178,7 @@ env.Append(
     ],
 
     LIBPATH=[
-        join(FRAMEWORK_DIR, "cores", board.get("build.core"), "siwisdk", "lib")
+        join(FRAMEWORK_DIR, "cores", board.get("build.core"), "logicromsdk", "lib")
     ],
 
     LIBS=[
@@ -219,7 +219,7 @@ if board.get("build.mcu") != "MT2625":
         ],
 
         LIBS=[
-            "siwisdk",
+            "logicrom",
         ],
     )
 else:
@@ -248,7 +248,7 @@ else:
         ],
 
         LIBS=[
-            "siwinbiotsdk",
+            "logicromnbiot",
         ],
     )
 
@@ -267,7 +267,7 @@ env.Append(ASFLAGS=env.get("CCFLAGS", [])[:])
 
 def load_siwilib_debug():
     for i, libs in enumerate(env["LIBS"]):
-        if libs.startswith("siwisdk") or libs.startswith("siwinbiot"):
+        if libs.startswith("logicrom") or libs.startswith("logicromnbiot"):
             env["LIBS"][i] = libs + "_debug"
 
 

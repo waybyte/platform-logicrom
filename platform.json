@@ -34,10 +34,10 @@
 			"title": "LOGICROM SDK"
 		},
 		"arduino": {
-			"package": "framework-siwiduino",
-			"script": "builder/framework/siwiduino.py",
-			"description": "Arduino Wiring-based Framework For SiWi and Quectel Modules",
-			"homepage": "https://github.com/siwiembedded/siwiduino",
+			"package": "framework-logicromarduino",
+			"script": "builder/framework/arduino.py",
+			"description": "Arduino Wiring-based Framework For LOGICROM Platform",
+			"homepage": "https://github.com/waybyte/Arduino_LogicROM",
 			"title": "Arduino Framework"
 		}
 	},
@@ -51,15 +51,15 @@
 			"type": "framework",
 			"version": "~0.8.0"
 		},
-		"framework-siwiduino": {
+		"framework-logicromarduino": {
 			"type": "framework",
 			"optional": true,
-			"version": "~0.4.0"
+			"version": "~0.5.0"
 		},
-		"tool-siwiflasher": {
+		"tool-logicromflasher": {
 			"type": "uploader",
 			"optional": true,
-			"version": "~2.2.0"
+			"version": "~2.3.0"
 		}
 	},
 	"pythonPackages": {
