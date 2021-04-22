@@ -1,6 +1,6 @@
 {
 	"build": {
-		"core": "siwigsm",
+		"core": "logicrom",
 		"cpu": "arm9ejs",
 		"f_cpu": "260000000L",
 		"mcu": "MT6261",
