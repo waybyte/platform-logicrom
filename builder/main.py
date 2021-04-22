@@ -15,7 +15,7 @@ from SCons.Script import (ARGUMENTS, COMMAND_LINE_TARGETS, AlwaysBuild,
 env = DefaultEnvironment()
 platform = env.PioPlatform()
 board = env.BoardConfig()
-flasher_path = platform.get_package_dir("tool-siwiflasher") or ""
+flasher_path = platform.get_package_dir("tool-logicromflasher") or ""
 
 def _get_board_mcu():
     return board.get("build.mcu")
@@ -45,17 +45,17 @@ env.Replace(
 # Setup tools based on system type
 if "windows" in get_systype() and board.get("build.mcu") != "MT2625":
     env.Replace(
-        SIWIFLASHER=join(flasher_path, "siwiflasher"),
+        LOGICROM_FLASHER=join(flasher_path, "logicromflasher"),
         REFLASH_FLAGS=[
             "-r",
             "-b", "$UPLOAD_SPEED",
             "-p", '"$UPLOAD_PORT"',
         ],
-        REFLASH_CMD='"$SIWIFLASHER" $REFLASH_FLAGS'
+        REFLASH_CMD='"$LOGICROM_FLASHER" $REFLASH_FLAGS'
     )
 else:
     env.Replace(
-        SIWIFLASHER='"$PYTHONEXE" ' + join(flasher_path, "siwiflasher.py"),
+        LOGICROM_FLASHER='"$PYTHONEXE" ' + join(flasher_path, "logicromflasher.py"),
         REFLASH_CMD='echo "Sorry! Reflashing is only supported on windows! :("'
     )
 
@@ -108,7 +108,7 @@ AlwaysBuild(
 # Target: Upload by default .bin file
 #
 env.Replace(
-    UPLOADER="$SIWIFLASHER",
+    UPLOADER="$LOGICROM_FLASHER",
     UPLOADERFLAGS=[
         "-b", "$UPLOAD_SPEED",
         "-p", '"$UPLOAD_PORT"',
