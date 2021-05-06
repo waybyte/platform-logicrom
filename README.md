@@ -35,13 +35,13 @@
 <img src="https://waybyte.github.io/asset/s20gsm_board.png" alt="s20 gsm board" width="50%">
 
 ## Quectel M66 GSM
-<img src="https://www.quectel.com/UploadImage/Product/20200304152709774.png" alt="Quectel M66" width="30%">
+<img src="https://www.quectel.com/wp-content/uploads/2021/03/M66_Layered-600x450.png" alt="Quectel M66" width="30%">
 
 ## Quectel MC60 GSM
-<img src="https://www.quectel.com/UploadImage/Product/20200302164806327.png" alt="Quectel MC60" width="30%">
+<img src="https://www.quectel.com/wp-content/uploads/2021/03/MC60_Layered-600x450.png" alt="Quectel MC60" width="30%">
 
 ## Quectel MC20 GSM
-<img src="https://www.quectel.com/UploadImage/Product/20200302175738828.png" alt="Quectel MC20" width="30%">
+<img src="https://www.quectel.com/wp-content/uploads/2021/03/MC20_Layered-600x450.png" alt="Quectel MC20" width="30%">
 
 ## Quectel M56 GSM
-<img src="https://www.quectel.com/UploadImage/Product/20200304115535722.png" alt="Quectel M56" width="30%">
+<img src="https://www.quectel.com/wp-content/uploads/2021/03/M56_Layered-1-600x451.png" alt="Quectel M56" width="30%">
