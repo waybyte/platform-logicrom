@@ -22,7 +22,7 @@
 		"arduino",
 		"logicromsdk"
 	],
-	"name": "EC600 LTE Cat.1 Module",
+	"name": "Quectel EC600 LTE Cat.1 Module",
 	"upload": {
 		"maximum_ram_size": 1048576,
 		"maximum_size": 1048576,
