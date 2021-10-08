@@ -1,20 +1,24 @@
 {
 	"name": "logicrom",
 	"title": "LOGICROM Development Platform",
-	"description": "Development Platform for 4G LTE, GSM & NBIoT Chipsets",
+	"description": "Development Platform for 4G LTE (RDA8910), GSM (MT2503/MT6261) & NBIoT (MT2625) Chipsets.",
 	"url": "https://logicrom.com/",
 	"homepage": "https://logicrom.com/",
 	"license": "MIT",
 	"keywords": [
 		"dev-platform",
+		"4G LTE",
+		"RDA8910",
+		"UIS8910DM",
 		"GSM",
 		"NBIoT",
 		"Quectel",
-		"MT2621",
+		"Neoway",
+		"SIMCOM",
+		"MT6261",
 		"MT2503",
 		"MT2625",
-		"GSM IoT",
-		"SIMCOM"
+		"IoT"
 	],
 	"engines": {
 		"platformio": "^5"
@@ -29,7 +33,7 @@
 		"logicromsdk": {
 			"package": "framework-logicromsdk",
 			"script": "builder/framework/logicromsdk.py",
-			"description": "LOGICROM Software Development Kit for 4G LTE, GSM and NB-IoT Modules",
+			"description": "LOGICROM Software Development Kit is a unified framework for IoT development on 4G LTE (RDA8910), GSM (MT2503/MT6261) and NBIoT (MT2625) chipsets/modules.",
 			"homepage": "https://github.com/waybyte/logicromsdk",
 			"title": "LOGICROM SDK"
 		},
@@ -49,17 +53,17 @@
 		},
 		"framework-logicromsdk": {
 			"type": "framework",
-			"version": "~0.8.0"
+			"version": "~0.9.0"
 		},
 		"framework-logicromarduino": {
 			"type": "framework",
 			"optional": true,
-			"version": "~0.5.0"
+			"version": "~0.7.0"
 		},
 		"tool-logicromflasher": {
 			"type": "uploader",
 			"optional": true,
-			"version": "~2.3.0"
+			"version": "~2.4.1"
 		}
 	},
 	"pythonPackages": {
