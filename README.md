@@ -12,9 +12,9 @@
 2. Install [PlatformIO Extension for VSCode](https://platformio.org/platformio-ide)
 3. Install LOGICROM Platform:
 	* Open PlatformIO Home
-	* Go to Platforms -> Advanced Installation
-	* Paste repository link https://github.com/logicrom/platform-logicrom.git
-	* Click Install
+	* Go to Platforms -> Embedded
+	* Enter in search box "Logicrom"
+	* Open "LOGICROM Development Platform" and hit install
 
 ## Examples
 
@@ -28,20 +28,38 @@
 
 * [Documentation](https://docs.logicrom.com) - LOGICROM SDK documentation for latest version
 
-# Supported Platforms
-## SIWI S20U GSM Module
-* S20U Module
-* S20 GSM development Board
-<img src="https://waybyte.github.io/asset/s20gsm_board.png" alt="s20 gsm board" width="50%">
+# Supported Modules
+## GSM Modules
 
-## Quectel M66 GSM
-<img src="https://www.quectel.com/wp-content/uploads/2021/03/M66_Layered-600x450.png" alt="Quectel M66" width="30%">
+| Module Name  | Networking | BT | GPS | GPIO | ADC | I2C | SPI | USB | LCD[^1] |
+|--------------|------------|----|-----|------|-----|-----|-----|-----|---------|
+| Quectel M66  | :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: | :x: |
+| Quectel M66DS| :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: | :x: |
+| Quectel MC60 | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: | :x: |
+| Quectel MC20 | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: | :x: |
+| Quectel M56| :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| Quectel MC20U| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| SIMCOM SIM868[^2]| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: |
 
-## Quectel MC60 GSM
-<img src="https://www.quectel.com/wp-content/uploads/2021/03/MC60_Layered-600x450.png" alt="Quectel MC60" width="30%">
+## 4G LTE Cat.1 Modules
 
-## Quectel MC20 GSM
-<img src="https://www.quectel.com/wp-content/uploads/2021/03/MC20_Layered-600x450.png" alt="Quectel MC20" width="30%">
+| Module Name  | Networking | BLE[^3] | GPS | GPIO | ADC | I2C | SPI | USB | LCD | Camera |
+|--------------|------------|---------|-----|------|-----|-----|-----|-----|-----|--------|
+| Neoway N58  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: |
+| Neoway N716 | :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: |
+| Quectel EC200 | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: |
+| Quectel EC600 | :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: |
 
-## Quectel M56 GSM
-<img src="https://www.quectel.com/wp-content/uploads/2021/03/M56_Layered-1-600x451.png" alt="Quectel M56" width="30%">
+DFOTA is also supported of on above mentioned LTE modules
+
+## NB-IoT Modules[^4]
+
+| Module Name  | Networking | GPS | GPIO | ADC | I2C | SPI | USB |
+|--------------|------------|-----|------|-----|-----|-----|-----|
+| Quectel BC66 | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| Quectel BC20 | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+
+[^1]: LCD is work in progress.
+[^2]: Please backup calibration during first flash via Maui Meta tool (google is your friend).
+[^3]: Currely only GATT Server supported and used for console purpose only.
+[^4]: Updates to come
