@@ -144,12 +144,18 @@ env.Append(
 
     CPPDEFINES=[
         ("__BUFSIZ__", "512"),
-        ("__FILENAME_MAX__", "256")
+        ("__FILENAME_MAX__", "256"),
+        ("F_CPU", "$BOARD_F_CPU"),
+		("ARDUINO", 10816),
+		"ARDUINO_ARCH_ARM",
+        ("ARDUINO_VARIANT", '\\"%s\\"' % board.get("build.variant").replace('"', "")),
+        ("ARDUINO_BOARD", '\\"%s\\"' % board.get("name").replace('"', "")),
     ],
 
     CPPPATH=[
         join(LOGICROMSDK_DIR, "include"),
-        join(LOGICROMSDK_DIR, "include", "ril")
+        join(LOGICROMSDK_DIR, "include", "ril"),
+        join(FRAMEWORK_DIR, "cores", board.get("build.core")),
     ],
 
     LINKFLAGS=[
