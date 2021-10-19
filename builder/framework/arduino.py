@@ -152,7 +152,7 @@ env.Append(
         ("__BUFSIZ__", "512"),
         ("__FILENAME_MAX__", "256"),
         ("F_CPU", "$BOARD_F_CPU"),
-		("ARDUINO", 10813),
+		("ARDUINO", 10816),
 		"ARDUINO_ARCH_ARM",
         ("ARDUINO_VARIANT", '\\"%s\\"' % board.get("build.variant").replace('"', "")),
         ("ARDUINO_BOARD", '\\"%s\\"' % board.get("name").replace('"', ""))
