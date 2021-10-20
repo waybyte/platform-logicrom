@@ -13,8 +13,9 @@ kinds of creative coding, interactive objects, spaces or physical experiences.
 http://arduino.cc/en/Reference/HomePage
 """
 
-from os.path import isdir, join
+from os.path import getsize, isdir, join
 import json
+from zlib import crc32
 from platformio.util import get_systype
 
 from SCons.Script import DefaultEnvironment
@@ -64,14 +65,49 @@ env.Depends("$BUILD_DIR/$PROGNAME$PROGSUFFIX", linker_script)
 env.Replace(LDSCRIPT_PATH="linkerscript_out.ld")
 
 
+def gen_img_file(target, source, env):
+    cmd = ["$OBJCOPY"]
+    (target_firm, ) = target
+    (source_elf, ) = source
+
+    target_img = env.subst("$BUILD_DIR/$PROGNAME") + '.img'
+
+    cmd.extend(["-O", "binary"])
+    cmd.append(source_elf.get_abspath())
+    cmd.append(target_img)
+    env.Execute(env.VerboseAction(" ".join(cmd), " "))
+
+    # fix bin size to 0x80 boundary
+    binsz = getsize(target_img)
+    f_binsz = (binsz + 0x7F) & ~0x7F
+    print("Binary size: %d" % binsz)
+    f = open(target_img, "rb")
+    f_bin = bytearray(f.read())
+    f.close()
+    f_bin += bytes(f_binsz - binsz)
+    # Fix header size
+    f_bin[4:8] = f_binsz.to_bytes(4, "little")
+    # Fix checksum
+    f_bin[8:0xC] = crc32(f_bin).to_bytes(4, "little")
+    # write final binary
+    f = open(target_img, "wb")
+    f.write(f_bin)
+    f.close()
+
+
 def gen_pac_file(target, source, env):
     (target_firm, ) = target
     (source_elf, ) = source
+
     # Generate image file
-    env.Execute(
-        env.VerboseAction("$MKIMAGE " + source_elf.get_abspath() + ' "$BUILD_DIR/$PROGNAME"' + '.img',
-                          "Generating Firmware Image")
-    )
+    if "darwin" in get_systype():
+        print("Generating Firmware Image")
+        gen_img_file(target, source, env)
+    else:
+        env.Execute(
+            env.VerboseAction("$MKIMAGE " + source_elf.get_abspath() + ' "$BUILD_DIR/$PROGNAME"' + '.img',
+                              "Generating Firmware Image")
+        )
 
     # Generate pac file
     init_fdl = [
@@ -200,6 +236,15 @@ env.Append(
         )
     )
 )
+
+if "darwin" in get_systype():
+    env["BUILDERS"]["BinToFOTA"] = Builder(
+        action=env.VerboseAction(" ".join([
+            'echo',
+            '"FOTA file generation is currently not supported. Please use Linux/Windows system."'
+        ]), "Generating FOTA firmware $TARGET"),
+        suffix=".bin"
+    )
 
 # uploader flag update
 env.Prepend(
