@@ -88,6 +88,7 @@ def gen_img_file(target, source, env):
     f.write(f_bin)
     f.close()
 
+
 def gen_pac_file(target, source, env):
     (target_firm, ) = target
     (source_elf, ) = source
@@ -221,6 +222,15 @@ env.Append(
         )
     )
 )
+
+if "darwin" in get_systype():
+    env["BUILDERS"]["BinToFOTA"] = Builder(
+        action=env.VerboseAction(" ".join([
+            'echo',
+            '"FOTA file generation is currently not supported. Please use Linux/Windows system."'
+        ]), "Generating FOTA firmware $TARGET"),
+        suffix=".bin"
+    )
 
 # uploader flag update
 env.Prepend(
