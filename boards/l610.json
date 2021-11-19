@@ -1,0 +1,35 @@
+{
+	"build": {
+		"core": "logicrom",
+		"cpu": "armv7a",
+		"f_cpu": "500000000L",
+		"mcu": "RDA8910",
+		"variant": "l610",
+		"logicromtype": "release",
+		"extra_flags": "-DSOC_RDA8910=1 -DPLATFORM_L610=1",
+		"hwids": [
+			[
+				"0x1782",
+				"0x4D11"
+			]
+		]
+	},
+	"connectivity": [
+		"gsm",
+		"bluetooth",
+		"gps"
+	],
+	"frameworks": [
+		"arduino",
+		"logicromsdk"
+	],
+	"name": "Fibocom L610 LTE Cat.1 Module",
+	"upload": {
+		"maximum_ram_size": 1048576,
+		"maximum_size": 1048576,
+		"require_upload_port": false,
+		"speed": 460800
+	},
+	"url": "https://www.fibocom.com/en/myproducts/info_itemid_1902.html",
+	"vendor": "Fibocom Wireless Inc."
+}
