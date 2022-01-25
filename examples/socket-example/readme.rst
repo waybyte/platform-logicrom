@@ -3,11 +3,11 @@ How to build
 
 1. Install `Visual Studio Code <https://code.visualstudio.com/>`_
 2. Install `PlatformIO Extension for VSCode <https://platformio.org/platformio-ide>`_
-3. Install LOGICROM Platform:
+3. Install Logicrom Platform:
 
    * Open PlatformIO Home
-   * Go to Platforms -> Advanced Installation
-   * Paste repository link https://github.com/waybyte/platform-logicrom.git
+   * Go to Platforms -> Embedded (Top Navigation)
+   * Type "Logicrom" in the search box
    * Click Install
 
 4. Download and Extract examples from github https://github.com/waybyte/platform-logicrom/archive/master.zip
@@ -27,9 +27,9 @@ Example Output
 
 .. code-block::
 
-	(c) 2021 WAYBYTE
-	LOGICROM v6.62 ea61103 - Build Apr 19 2021 19:58:05
-	Core firmware: WBMT2503DV01_c70a56b
+	(c) Waybyte Solutions
+	Logicrom v6.65 268a05f - Build Jan 25 2022 12:00:06
+	Core firmware: WBMT2503DV01_c88ba54
 	System Ready
 	System Initialization finished
 	SYSTEM: GSM NW State: 2

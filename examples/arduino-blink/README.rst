@@ -3,11 +3,11 @@ How to build
 
 1. Install `Visual Studio Code <https://code.visualstudio.com/>`_
 2. Install `PlatformIO Extension for VSCode <https://platformio.org/platformio-ide>`_
-3. Install LOGICROM Platform:
+3. Install Logicrom Platform:
 
    * Open PlatformIO Home
-   * Go to Platforms -> Advanced Installation
-   * Paste repository link https://github.com/waybyte/platform-logicrom.git
+   * Go to Platforms -> Embedded (Top Navigation)
+   * Type "Logicrom" in the search box
    * Click Install
 
 4. Download and Extract examples from github https://github.com/waybyte/platform-logicrom/archive/master.zip
