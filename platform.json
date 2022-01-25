@@ -1,7 +1,7 @@
 {
 	"name": "logicrom",
-	"title": "LOGICROM Development Platform",
-	"description": "Development Platform for 4G LTE (RDA8910), GSM (MT2503/MT6261) & NBIoT (MT2625) Chipsets.",
+	"title": "Logicrom Development Platform",
+	"description": "Wireless IoT Development Platform for 4G LTE (RDA8910), GSM (MT2503/MT6261) & NBIoT (MT2625) Chipsets.",
 	"url": "https://logicrom.com/",
 	"homepage": "https://logicrom.com/",
 	"license": "MIT",
@@ -15,6 +15,7 @@
 		"Quectel",
 		"Neoway",
 		"SIMCOM",
+		"Fibocom",
 		"MT6261",
 		"MT2503",
 		"MT2625",
@@ -28,19 +29,19 @@
 		"url": "https://github.com/waybyte/platform-logicrom.git"
 	},
 	"version": "0.9.0",
-	"vendor": "WAYBYTE Solutions",
+	"vendor": "Waybyte Solutions",
 	"frameworks": {
 		"logicromsdk": {
 			"package": "framework-logicromsdk",
 			"script": "builder/framework/logicromsdk.py",
-			"description": "LOGICROM Software Development Kit is a unified framework for IoT development on 4G LTE (RDA8910), GSM (MT2503/MT6261) and NBIoT (MT2625) chipsets/modules.",
+			"description": "Logicrom Software Development Kit is a framework for Wireless IoT development on 4G LTE (RDA8910), GSM (MT2503/MT6261) and NBIoT (MT2625) chipsets/modules.",
 			"homepage": "https://github.com/waybyte/logicromsdk",
-			"title": "LOGICROM SDK"
+			"title": "Logicrom SDK"
 		},
 		"arduino": {
 			"package": "framework-logicromarduino",
 			"script": "builder/framework/arduino.py",
-			"description": "Arduino Wiring-based Framework For LOGICROM Platform",
+			"description": "Arduino Wiring-based Framework For Logicrom Wireless IoT Platform",
 			"homepage": "https://github.com/waybyte/Arduino_LogicROM",
 			"title": "Arduino Framework"
 		}

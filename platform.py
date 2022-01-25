@@ -1,4 +1,4 @@
-# Copyright 2021 WAYBYTE Solutions
+# Copyright 2021 Waybyte Solutions
 #
 # SPDX-License-Identifier: MIT
 #

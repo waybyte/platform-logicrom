@@ -1,4 +1,4 @@
-# LOGICROM for Platformio
+# Logicrom Wireless IoT Platform for Platformio
 
 ![Examples](https://github.com/waybyte/platform-logicrom/workflows/Examples/badge.svg)
 [![Documentation Status](https://readthedocs.org/projects/logicromsdk/badge/?version=latest)](https://docs.logicrom.com)
@@ -10,11 +10,11 @@
 
 1. Install [Visual Studio Code](https://code.visualstudio.com/)
 2. Install [PlatformIO Extension for VSCode](https://platformio.org/platformio-ide)
-3. Install LOGICROM Platform:
+3. Install Logicrom Platform:
 	* Open PlatformIO Home
 	* Go to Platforms -> Embedded
 	* Enter in search box "Logicrom"
-	* Open "LOGICROM Development Platform" and hit install
+	* Open "Logicrom Development Platform" and hit install
 
 ## Examples
 
@@ -26,7 +26,7 @@
 
 ## Resources
 
-* [Documentation](https://docs.logicrom.com) - LOGICROM SDK documentation for latest version
+* [Documentation](https://docs.logicrom.com) - Logicrom SDK documentation for latest version
 
 # Supported Modules
 ## 4G LTE Cat.1 Modules
