@@ -126,6 +126,7 @@ def gen_pac_file(target, source, env):
         'cfg-nvitem', '-n', '"LTE Calibration"', '-i', '0x26e', '--use', '1', '--replace', '0', '--continue', '0', '--backup', '1',
         'cfg-nvitem', '-n', '"IMEI"', '-i', '0xFFFFFFFF', '--use', '1', '--replace', '0', '--continue', '0', '--backup', '1',
         'cfg-nvitem', '-n', '"BT_Config"', '-i', '0x191', '--use', '1', '--replace', '0', '--continue', '1', '--backup', '1',
+        'cfg-nvitem', '-n', '"Logicrom"', '-i', '0x280', '--use', '1', '--replace', '0', '--continue', '1', '--backup', '1',
         'cfg-nvitem', '-n', '"Customer"', '-i', '0x27e', '--use', '1', '--replace', '0', '--continue', '1', '--backup', '1',
     ]
 
