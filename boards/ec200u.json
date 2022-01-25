@@ -4,9 +4,9 @@
 		"cpu": "armv7a",
 		"f_cpu": "500000000L",
 		"mcu": "RDA8910",
-		"variant": "ec200",
+		"variant": "ec200u",
 		"logicromtype": "release",
-		"extra_flags": "-DSOC_RDA8910=1 -DPLATFORM_EC200=1",
+		"extra_flags": "-DSOC_RDA8910=1 -DPLATFORM_EC200U=1",
 		"hwids": [
 			[
 				"0x1782",
@@ -23,7 +23,7 @@
 		"arduino",
 		"logicromsdk"
 	],
-	"name": "Quectel EC200 LTE Cat.1 Module",
+	"name": "Quectel EC200U LTE Cat.1 Module",
 	"upload": {
 		"maximum_ram_size": 1048576,
 		"maximum_size": 1048576,
