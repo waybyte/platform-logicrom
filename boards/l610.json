@@ -4,7 +4,7 @@
 		"cpu": "armv7a",
 		"f_cpu": "500000000L",
 		"mcu": "RDA8910",
-		"variant": "l610",
+		"variant": "ec200u",
 		"logicromtype": "release",
 		"extra_flags": "-DSOC_RDA8910=1 -DPLATFORM_L610=1",
 		"hwids": [
