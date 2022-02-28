@@ -145,7 +145,7 @@ int main(int argc, char *argv[])
 	printf("System Ready\n");
 
 	/* Create ADC task */
-	os_create_task(adc_task, NULL, FALSE);
+	os_task_create(adc_task, NULL, FALSE);
 
 	printf("System Initialization finished\n");
 
