@@ -45,9 +45,9 @@ tool_path = join(LOGICROMSDK_DIR, "tools", "rda8910")
 
 env.Replace(
     DTOOLS=join(tool_path, systype, "dtools"),
-    MKIMAGE='"$DTOOLS"' + " mkappimg",
-    PACGEN='"$PYTHONEXE" ' + join(tool_path, "pacgen.py"),
-    FOTAGEN='"$DTOOLS"' + " fotacreate2",
+    MKIMAGE='$DTOOLS' + " mkappimg",
+    PACGEN='$PYTHONEXE ' + join(tool_path, "pacgen.py"),
+    FOTAGEN='$DTOOLS' + " fotacreate2",
 )
 
 # Generate linker script
@@ -57,11 +57,11 @@ linker_script = env.Command(
         LOGICROMSDK_DIR, "lib", "rda8910", "app_flashimg.ld"
     ),
     env.VerboseAction(
-        '$CC -I"$LOGICROMSDK_DIR/lib/rda8910" -P -x c -E $SOURCE -o $TARGET',
+        '$CC -I"' + join(FRAMEWORK_DIR, "lib", "rda8910") + '" -P -x c -E $SOURCE -o $TARGET',
         "Generating LD script $TARGET",
     ),
 )
-env.Depends("$BUILD_DIR/$PROGNAME$PROGSUFFIX", linker_script)
+env.Depends(join("$BUILD_DIR", "$PROGNAME" + "$PROGSUFFIX"), linker_script)
 env.Replace(LDSCRIPT_PATH="linkerscript_out.ld")
 
 
@@ -70,7 +70,7 @@ def gen_img_file(target, source, env):
     (target_firm, ) = target
     (source_elf, ) = source
 
-    target_img = env.subst("$BUILD_DIR/$PROGNAME") + '.img'
+    target_img = join(env.subst("$BUILD_DIR"), env.subst("$PROGNAME") + '.img')
 
     cmd.extend(["-O", "binary"])
     cmd.append(source_elf.get_abspath())
@@ -105,7 +105,7 @@ def gen_pac_file(target, source, env):
         gen_img_file(target, source, env)
     else:
         env.Execute(
-            env.VerboseAction("$MKIMAGE " + source_elf.get_abspath() + ' "$BUILD_DIR/$PROGNAME"' + '.img',
+            env.VerboseAction("$MKIMAGE " + source_elf.get_abspath() + ' ' + join("$BUILD_DIR", env.subst("$PROGNAME") + '.img'),
                               "Generating Firmware Image")
         )
 
@@ -132,7 +132,7 @@ def gen_pac_file(target, source, env):
 
     pac_app = [
         'cfg-image', '-i', 'APPIMG', '-a', core_config["CONFIG_APPIMG_FLASH_ADDRESS"], '-s', core_config["CONFIG_APPIMG_FLASH_SIZE"],
-  		    '-p', ' "$BUILD_DIR/$PROGNAME"' + '.img'
+  		    '-p', join("$BUILD_DIR", env.subst("$PROGNAME") + '.img')
     ]
 
     pac_cmd = [
