@@ -20,7 +20,18 @@
 		"MT2503",
 		"MT2625",
 		"IoT",
-		"EC200u", "EC600u", "N58", "N716", "N715", "L610", "M66", "MC60", "MC20", "M26", "M56", "SIM868"
+		"EC200u",
+		"EC600u",
+		"N58",
+		"N716",
+		"N715",
+		"L610",
+		"M66",
+		"MC60",
+		"MC20",
+		"M26",
+		"M56",
+		"SIM868"
 	],
 	"engines": {
 		"platformio": "^5"
@@ -55,17 +66,17 @@
 		},
 		"framework-logicromsdk": {
 			"type": "framework",
-			"version": "~0.9.1"
+			"version": "~0.9.2"
 		},
 		"framework-logicromarduino": {
 			"type": "framework",
 			"optional": true,
-			"version": "~0.8.0"
+			"version": "~0.9.0"
 		},
 		"tool-logicromflasher": {
 			"type": "uploader",
 			"optional": true,
-			"version": "~2.5.0"
+			"version": "~2.5.1"
 		}
 	},
 	"pythonPackages": {
