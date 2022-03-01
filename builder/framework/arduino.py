@@ -13,9 +13,8 @@ kinds of creative coding, interactive objects, spaces or physical experiences.
 http://arduino.cc/en/Reference/HomePage
 """
 
-from os.path import abspath, isdir, isfile, join, dirname, getsize
+from os.path import isdir, join, dirname, getsize
 from os import remove
-from shutil import copyfile
 from hashlib import md5
 import zlib
 
@@ -50,7 +49,7 @@ def gen_bin_file(target, source, env):
         "6261": [0x00, 0x00, 0x2E, 0x10],
     }
 
-    temp_firm = dirname(target_firm.get_abspath()) + "/temp.bin"
+    temp_firm = join(dirname(target_firm.get_abspath()), "temp.bin")
     cmd.extend(["-O", "binary"])
     cmd.append(target_elf.get_abspath())
     cmd.append(temp_firm)
