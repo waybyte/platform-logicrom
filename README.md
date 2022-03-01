@@ -1,5 +1,7 @@
 # Logicrom Wireless IoT Platform for Platformio
 
+[![PlatformIO Registry](https://badges.registry.platformio.org/packages/ajaybhargav/platform/logicrom.svg)](https://registry.platformio.org/platforms/ajaybhargav/logicrom)
+
 ![Examples](https://github.com/waybyte/platform-logicrom/workflows/Examples/badge.svg)
 [![Documentation Status](https://readthedocs.org/projects/logicromsdk/badge/?version=latest)](https://docs.logicrom.com)
 [![Github Issues](https://img.shields.io/github/issues/waybyte/platform-logicrom.svg)](http://github.com/waybyte/platform-logicrom/issues)
