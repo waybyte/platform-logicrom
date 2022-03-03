@@ -1,0 +1,3 @@
+[submodule "examples/example-os"]
+	path = examples/example-os
+	url = https://github.com/waybyte/example-os.git
