@@ -7,7 +7,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-18.04, windows-latest, macos-latest]
+        os: [ubuntu-latest, windows-latest, macos-latest]
         python-version: [3.7]
         example:
           - "examples/arduino-blink"
@@ -16,9 +16,13 @@ jobs:
           - "examples/socket-example"
           - "examples/ssl-socket-example"
           - "examples/ssl-socket-clientauth"
+          - "examples/example-os"
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout Logicrom platform and examples
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v1
         with:
