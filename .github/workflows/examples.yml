@@ -17,6 +17,7 @@ jobs:
           - "examples/ssl-socket-example"
           - "examples/ssl-socket-clientauth"
           - "examples/example-os"
+          - "examples/example-console"
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout Logicrom platform and examples
