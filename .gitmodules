@@ -1,3 +1,6 @@
 [submodule "examples/example-os"]
 	path = examples/example-os
 	url = https://github.com/waybyte/example-os.git
+[submodule "examples/example-console"]
+	path = examples/example-console
+	url = https://github.com/waybyte/example-console.git
