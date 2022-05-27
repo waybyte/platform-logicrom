@@ -168,7 +168,6 @@ env.Append(
         "-nostdlib",
         "-nostartfiles",
         "-nodefaultlibs",
-        "-Wl,--defsym,platform_init=platform_%s_init" % board.get("build.variant")
     ],
 
     LIBS=["logicrom4g", "c", "gcc", "m"],
