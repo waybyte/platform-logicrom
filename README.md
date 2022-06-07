@@ -33,6 +33,34 @@
 
 * [Documentation](https://docs.logicrom.com) - Logicrom SDK documentation for latest version
 
+
+# Licensing
+
+Logicrom is available in dual-license:
+
+- **Logicrom Personal License** - Personal use or Evaluation
+- **Logicrom Commercial License** - Commercial Use
+
+
+## Personal vs Commercial License
+
+|              |  Personal |  Commercial  |
+| -------------| ------------------ | -------------------- |
+| License | [MIT](https://github.com/waybyte/platform-logicrom/blob/master/LICENSE) | Commercial - [contact us](https://www.waybyte.in/contact) |
+| Limitations | 1 License per user | None  |
+| Price  | Free | Paid, see [details](https://www.waybyte.in/pricing) |
+| functionality  | Full | Full |
+| Technical support  | Community support via [Github](https://github.com/orgs/waybyte/discussions) | Commercial Email Support |
+
+## Get Free Personal License
+
+1) Register account on [waybyte.in](https://www.waybyte.in/register)
+2) Click on [Register Free Device](https://www.waybyte.in/devices/register) from left menu
+3) Flash Logicrom core firmware
+4) Put a valid SIM card in device
+5) Turn on the device, It should accquire the license\
+   If device fail to do so, run "getlic" command from device console to try again.
+
 # Supported Modules
 ## 4G LTE Cat.1 Modules
 
