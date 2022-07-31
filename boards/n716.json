@@ -24,7 +24,7 @@
 	],
 	"name": "Neoway N716 LTE Cat.1 Module",
 	"upload": {
-		"maximum_ram_size": 1048576,
+		"maximum_ram_size": 524288,
 		"maximum_size": 1048576,
 		"require_upload_port": false,
 		"speed": 460800
