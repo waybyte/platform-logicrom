@@ -4,3 +4,30 @@
 [submodule "examples/example-console"]
 	path = examples/example-console
 	url = https://github.com/waybyte/example-console.git
+[submodule "examples/example-gps"]
+	path = examples/example-gps
+	url = https://github.com/waybyte/example-gps.git
+[submodule "examples/example-display"]
+	path = examples/example-display
+	url = https://github.com/waybyte/example-display.git
+[submodule "examples/example-gpio"]
+	path = examples/example-gpio
+	url = https://github.com/waybyte/example-gpio.git
+[submodule "examples/example-pwm"]
+	path = examples/example-pwm
+	url = https://github.com/waybyte/example-pwm.git
+[submodule "examples/example-spi"]
+	path = examples/example-spi
+	url = https://github.com/waybyte/example-spi.git
+[submodule "examples/example-i2c"]
+	path = examples/example-i2c
+	url = https://github.com/waybyte/example-i2c.git
+[submodule "examples/example-timer"]
+	path = examples/example-timer
+	url = https://github.com/waybyte/example-timer.git
+[submodule "examples/example-uart"]
+	path = examples/example-uart
+	url = https://github.com/waybyte/example-uart.git
+[submodule "examples/example-httpclient"]
+	path = examples/example-httpclient
+	url = https://github.com/waybyte/example-httpclient.git
