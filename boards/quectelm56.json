@@ -4,7 +4,7 @@
 		"cpu": "arm9ejs",
 		"f_cpu": "260000000L",
 		"mcu": "MT6261",
-		"variant": "s20u",
+		"variant": "mc20u",
 		"newlib": "nano",
 		"logicromtype": "release",
 		"extra_flags": "-DPLATFORM_M56=1",
