@@ -16,8 +16,17 @@ jobs:
           - "examples/socket-example"
           - "examples/ssl-socket-example"
           - "examples/ssl-socket-clientauth"
-          - "examples/example-os"
           - "examples/example-console"
+          - "examples/example-display"
+          - "examples/example-gpio"
+          - "examples/example-gps"
+          - "examples/example-httpclient"
+          - "examples/example-i2c"
+          - "examples/example-os"
+          - "examples/example-pwm"
+          - "examples/example-spi"
+          - "examples/example-timer"
+          - "examples/example-uart"
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout Logicrom platform and examples
