@@ -30,6 +30,7 @@
 		"M66",
 		"MC60",
 		"MC20",
+		"MC20UCB",
 		"M26",
 		"M56",
 		"SIM868"
@@ -41,7 +42,7 @@
 		"type": "git",
 		"url": "https://github.com/waybyte/platform-logicrom.git"
 	},
-	"version": "0.9.3",
+	"version": "0.9.4",
 	"vendor": "Waybyte Solutions",
 	"frameworks": {
 		"logicromsdk": {
@@ -67,17 +68,17 @@
 		},
 		"framework-logicromsdk": {
 			"type": "framework",
-			"version": "~0.9.4"
+			"version": "~0.9.6"
 		},
 		"framework-logicromarduino": {
 			"type": "framework",
 			"optional": true,
-			"version": "~0.9.1"
+			"version": "~0.9.3"
 		},
 		"tool-logicromflasher": {
 			"type": "uploader",
 			"optional": true,
-			"version": "~2.6.0"
+			"version": "~2.6.2"
 		}
 	},
 	"pythonPackages": {

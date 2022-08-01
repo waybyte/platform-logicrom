@@ -1,6 +1,6 @@
-# Logicrom Wireless IoT Platform for Platformio
+# Logicrom Wireless IoT Platform for Platformio IDE
 
-[![PlatformIO Registry](https://badges.registry.platformio.org/packages/ajaybhargav/platform/logicrom.svg)](https://registry.platformio.org/platforms/ajaybhargav/logicrom)
+[![PlatformIO Registry](https://badges.registry.platformio.org/packages/waybyte/platform/logicrom.svg)](https://registry.platformio.org/platforms/waybyte/logicrom)
 
 ![Examples](https://github.com/waybyte/platform-logicrom/workflows/Examples/badge.svg)
 [![Documentation Status](https://readthedocs.org/projects/logicromsdk/badge/?version=latest)](https://docs.logicrom.com)
@@ -38,7 +38,7 @@
 
 Logicrom is available in dual-license:
 
-- **Logicrom Personal License** - Personal use or Evaluation
+- **Logicrom Personal License** - Free for Personal use or Evaluation
 - **Logicrom Commercial License** - Commercial Use
 
 
