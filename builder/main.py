@@ -1,4 +1,4 @@
-# Copyright 2021 Waybyte Solutions
+# Copyright 2022 Waybyte Solutions
 #
 # SPDX-License-Identifier: MIT
 #
@@ -67,6 +67,19 @@ if env.get("PROGNAME", "program") == "program":
 
 if board.get("build.mcu") == "RDA8910":
     env.Replace(TARGETSUFFIX=".pac")
+elif board.get("build.mcu") == "RDA8955":
+    env.Replace(
+        AR="mips-elf-ar",
+        AS="mips-elf-as",
+        CC="mips-elf-gcc",
+        CXX="mips-elf-g++",
+        GDB="mips-elf-gdb",
+        OBJCOPY="mips-elf-objcopy",
+        RANLIB="mips-elf-ranlib",
+        SIZETOOL="mips-elf-size",
+
+        TARGETSUFFIX=".lod"
+    )
 
 target_elf = None
 if "nobuild" in COMMAND_LINE_TARGETS:
@@ -136,6 +149,12 @@ if board.get("build.mcu") not in ["MT6261", "MT2503"]:
         UPLOADERFLAGS=[
             "-m", '"${__get_board_mcu()}"',
         ]
+    )
+
+if board.get("build.mcu") == "RDA8955":
+    env.Replace(
+        UPLOADCMD='echo Please use coolwatcher to flash firmware lod file.',
+        REFLASH_CMD='echo Please use coolwatcher to reflash core lod file.'
     )
 
 if env.subst("$UPLOAD_PORT") == "":

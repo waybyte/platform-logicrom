@@ -1,7 +1,7 @@
 {
 	"name": "logicrom",
 	"title": "Logicrom Development Platform",
-	"description": "Wireless IoT Development Platform for 4G LTE (RDA8910), GSM (MT2503/MT6261) & NBIoT (MT2625) Chipsets.",
+	"description": "Wireless IoT Development Platform for 4G LTE (RDA8910), GSM (MT2503/MT6261/RDA8955) & NBIoT (MT2625) Chipsets.",
 	"url": "https://www.waybyte.in/products/logicrom",
 	"homepage": "https://www.waybyte.in/",
 	"license": "MIT",
@@ -19,6 +19,7 @@
 		"MT6261",
 		"MT2503",
 		"MT2625",
+		"RDA8955",
 		"IoT",
 		"EC200u",
 		"EC600u",
@@ -33,7 +34,11 @@
 		"MC20UCB",
 		"M26",
 		"M56",
-		"SIM868"
+		"SIM868",
+		"MC65",
+		"M590",
+		"A9",
+		"A9G"
 	],
 	"engines": {
 		"platformio": "^6"
@@ -48,7 +53,7 @@
 		"logicromsdk": {
 			"package": "framework-logicromsdk",
 			"script": "builder/framework/logicromsdk.py",
-			"description": "Logicrom Software Development Kit is a framework for Wireless IoT development on 4G LTE (RDA8910), GSM (MT2503/MT6261) and NBIoT (MT2625) chipsets/modules.",
+			"description": "Logicrom Software Development Kit is a framework for Wireless IoT development on 4G LTE (RDA8910), GSM (MT2503/MT6261/RDA8955) and NBIoT (MT2625) chipsets/modules.",
 			"homepage": "https://github.com/waybyte/logicromsdk",
 			"title": "Logicrom SDK"
 		},
@@ -65,6 +70,12 @@
 			"type": "toolchain",
 			"owner": "platformio",
 			"version": "~1.80201.0"
+		},
+		"toolchain-gccmipselfrda8955": {
+			"type": "toolchain",
+			"owner": "waybyte",
+			"optional": true,
+			"version" : "https://waybyte.in/toolchain/toolchain-gccmipselfrda8955-windows-4.4.2.tar.gz"
 		},
 		"framework-logicromsdk": {
 			"type": "framework",
