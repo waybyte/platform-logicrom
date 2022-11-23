@@ -1,0 +1,33 @@
+{
+	"build": {
+		"core": "logicrom",
+		"cpu": "mips",
+		"f_cpu": "178000000L",
+		"mcu": "RDA8955",
+		"variant": "m590",
+		"logicromtype": "release",
+		"extra_flags": "-DSOC_RDA8955=1 -DPLATFORM_M590=1",
+		"hwids": [
+			[
+				"0x1782",
+				"0x4D11"
+			]
+		]
+	},
+	"connectivity": [
+		"gsm"
+	],
+	"frameworks": [
+		"arduino",
+		"logicromsdk"
+	],
+	"name": "Neoway M590 GSM Module",
+	"upload": {
+		"maximum_ram_size": 1040384,
+		"maximum_size": 589824,
+		"require_upload_port": false,
+		"speed": 460800
+	},
+	"url": "http://www.neoway.com/details/product_en/823.html",
+	"vendor": "Neoway Technology Co.Ltd."
+}

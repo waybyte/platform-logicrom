@@ -1,0 +1,33 @@
+{
+	"build": {
+		"core": "logicrom",
+		"cpu": "mips",
+		"f_cpu": "178000000L",
+		"mcu": "RDA8955",
+		"variant": "a9",
+		"logicromtype": "release",
+		"extra_flags": "-DSOC_RDA8955=1 -DPLATFORM_A9=1",
+		"hwids": [
+			[
+				"0x1782",
+				"0x4D11"
+			]
+		]
+	},
+	"connectivity": [
+		"gsm"
+	],
+	"frameworks": [
+		"arduino",
+		"logicromsdk"
+	],
+	"name": "AiThinker A9 GSM Module",
+	"upload": {
+		"maximum_ram_size": 1040384,
+		"maximum_size": 589824,
+		"require_upload_port": false,
+		"speed": 460800
+	},
+	"url": "http://www.ai-thinker.com/pro_view-9.html",
+	"vendor": "Ai-Thinker Co., Ltd."
+}
