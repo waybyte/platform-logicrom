@@ -147,7 +147,7 @@ int main(int argc, char *argv[])
 	printf("System Ready\n");
 
 	/* Create Application tasks */
-	os_task_create(gpio_blink_task, NULL, FALSE);
+	os_task_create(gpio_blink_task, "gpioblink", NULL, FALSE);
 
 	printf("System Initialization finished\n");
 

@@ -280,7 +280,7 @@ int main(void)
 	printf("System Initialized\n");
 
 	/* Create Application tasks */
-	os_task_create(socket_task, NULL, FALSE);
+	os_task_create(socket_task, "soctest", NULL, FALSE);
 
 	while (1) {
 		/* Main task loop */
