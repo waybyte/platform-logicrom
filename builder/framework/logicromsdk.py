@@ -1,4 +1,4 @@
-# Copyright 2021 Waybyte Solutions
+# Copyright 2022 Waybyte Solutions
 #
 # SPDX-License-Identifier: MIT
 #
@@ -168,7 +168,8 @@ env.Append(
     LIBS=["c", "gcc", "m"],
 
     LIBPATH=[
-        join(FRAMEWORK_DIR, "lib")
+        join(FRAMEWORK_DIR, "lib"),
+        join(FRAMEWORK_DIR, "lib", "mtk")
     ],
 
     LIBSOURCE_DIRS=[join(FRAMEWORK_DIR, "libraries")],

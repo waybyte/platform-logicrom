@@ -1,4 +1,4 @@
-# Copyright 2021 Waybyte Solutions
+# Copyright 2022 Waybyte Solutions
 #
 # SPDX-License-Identifier: MIT
 #
@@ -177,7 +177,8 @@ env.Append(
     ],
 
     LIBPATH=[
-        join(FRAMEWORK_DIR, "cores", board.get("build.core"), "logicromsdk", "lib")
+        join(FRAMEWORK_DIR, "cores", board.get("build.core"), "logicromsdk", "lib"),
+        join(FRAMEWORK_DIR, "cores", board.get("build.core"), "logicromsdk", "lib", "mtk"),
     ],
 
     LIBS=[
