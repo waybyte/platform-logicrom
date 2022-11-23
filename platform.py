@@ -3,8 +3,7 @@
 # SPDX-License-Identifier: MIT
 #
 
-from platform import system
-from platformio.managers.platform import PlatformBase
+from platformio.public import PlatformBase
 from platformio.util import get_systype
 
 class LogicromPlatform(PlatformBase):
