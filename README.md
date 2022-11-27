@@ -46,16 +46,16 @@ Logicrom is available in dual-license:
 
 |              |  Personal |  Commercial  |
 | -------------| ------------------ | -------------------- |
-| License | [MIT](https://github.com/waybyte/platform-logicrom/blob/master/LICENSE) | Commercial - [contact us](https://www.waybyte.in/contact) |
+| License | [MIT](https://github.com/waybyte/platform-logicrom/blob/master/LICENSE) | Commercial - [contact us](https://waybyte.in/contact) |
 | Limitations | 1 License per user | None  |
-| Price  | Free | Paid, see [details](https://www.waybyte.in/pricing) |
+| Price  | Free | Paid, see [details](https://waybyte.in/pricing) |
 | functionality  | Full | Full |
 | Technical support  | Community support via [Github](https://github.com/orgs/waybyte/discussions) | Commercial Email Support |
 
 ## Get Free Personal License
 
-1) Register account on [waybyte.in](https://www.waybyte.in/register)
-2) Click on [Register Free Device](https://www.waybyte.in/devices/register) from left menu
+1) Register account on [waybyte.in](https://waybyte.in/register)
+2) Click on [Register Free Device](https://waybyte.in/devices/register) from left menu
 3) Flash Logicrom core firmware
 4) Put a valid SIM card in device
 5) Turn on the device, It should accquire the license\

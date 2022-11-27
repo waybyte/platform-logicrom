@@ -2,8 +2,8 @@
 	"name": "logicrom",
 	"title": "Logicrom Development Platform",
 	"description": "Wireless IoT Development Platform for 4G LTE (RDA8910), GSM (MT2503/MT6261/RDA8955) & NBIoT (MT2625) Chipsets.",
-	"url": "https://www.waybyte.in/products/logicrom",
-	"homepage": "https://www.waybyte.in/",
+	"url": "https://waybyte.in/products/logicrom",
+	"homepage": "https://waybyte.in/",
 	"license": "MIT",
 	"keywords": [
 		"dev-platform",
@@ -47,7 +47,7 @@
 		"type": "git",
 		"url": "https://github.com/waybyte/platform-logicrom.git"
 	},
-	"version": "0.9.4",
+	"version": "0.9.5",
 	"vendor": "Waybyte Solutions",
 	"frameworks": {
 		"logicromsdk": {
