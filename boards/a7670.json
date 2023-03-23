@@ -1,0 +1,34 @@
+{
+	"build": {
+		"core": "logicrom",
+		"cpu": "armv7a",
+		"f_cpu": "416000000L",
+		"mcu": "ASR1601",
+		"variant": "a7670",
+		"flashsz": "16M",
+		"logicromtype": "release",
+		"extra_flags": "-DSOC_ASR160X=1 -DSOC_ASR1601=1 -DPLATFORM_A7670=1",
+		"hwids": [
+			[
+				"0x2ECC",
+				"0x3015"
+			]
+		]
+	},
+	"connectivity": [
+		"gsm",
+		"LTE Cat.1"
+	],
+	"frameworks": [
+		"logicromsdk"
+	],
+	"name": "SIMCOM A7670X LTE Cat.1 Module",
+	"upload": {
+		"maximum_ram_size": 524288,
+		"maximum_size": 1048576,
+		"require_upload_port": false,
+		"speed": 460800
+	},
+	"url": "",
+	"vendor": "SIMCom"
+}
