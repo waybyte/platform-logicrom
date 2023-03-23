@@ -31,3 +31,24 @@
 [submodule "examples/example-httpclient"]
 	path = examples/example-httpclient
 	url = https://github.com/waybyte/example-httpclient.git
+[submodule "examples/example-socket"]
+	path = examples/example-socket
+	url = https://github.com/waybyte/example-socket
+[submodule "examples/example-ssl-socket"]
+	path = examples/example-ssl-socket
+	url = https://github.com/waybyte/example-ssl-socket
+[submodule "examples/hello-world"]
+	path = examples/hello-world
+	url = https://github.com/waybyte/hello-world-logicrom
+[submodule "examples/example-ssl-socket-clientauth"]
+	path = examples/example-ssl-socket-clientauth
+	url = https://github.com/waybyte/example-ssl-socket-clientauth
+[submodule "examples/example-adc"]
+	path = examples/example-adc
+	url = https://github.com/waybyte/example-adc
+[submodule "examples/logicromsdk-blink"]
+	path = examples/logicromsdk-blink
+	url = https://github.com/waybyte/logicromsdk-blink.git
+[submodule "examples/arduino-blink"]
+	path = examples/arduino-blink
+	url = https://github.com/waybyte/arduino-blink.git
