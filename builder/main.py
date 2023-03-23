@@ -1,4 +1,4 @@
-# Copyright 2022 Waybyte Solutions
+# Copyright 2023 Waybyte Solutions
 #
 # SPDX-License-Identifier: MIT
 #
@@ -67,6 +67,8 @@ if env.get("PROGNAME", "program") == "program":
 
 if board.get("build.mcu") == "RDA8910":
     env.Replace(TARGETSUFFIX=".pac")
+elif board.get("build.mcu") in ["ASR1601", "ASR1603"]:
+    env.Replace(TARGETSUFFIX=".zip")
 elif board.get("build.mcu") == "RDA8955":
     env.Replace(
         AR="mips-elf-ar",
@@ -85,20 +87,26 @@ target_elf = None
 if "nobuild" in COMMAND_LINE_TARGETS:
     target_elf = join("$BUILD_DIR", "${PROGNAME}.elf")
     target_firm = join("$BUILD_DIR", "${PROGNAME}.${TARGETSUFFIX}")
-    target_firm_fota = join("$BUILD_DIR", "fota_${PROGNAME}.${TARGETSUFFIX}")
+    target_firm_fota = join("$BUILD_DIR", "fota_${PROGNAME}.bin")
     target_upload = target_firm
 else:
     target_elf = env.BuildProgram()
     target_firm = env.ElfToBin(join("$BUILD_DIR", "${PROGNAME}"), target_elf)
-    target_firm_fota = env.BinToFOTA(
-        join("$BUILD_DIR", "fota_${PROGNAME}"), target_firm)
+    if board.get("build.mcu") in ["ASR1601", "ASR1603"]:
+        target_firm_fota = env.BinToFOTA(
+            join("$BUILD_DIR", "fota_${PROGNAME}"), target_elf)
+    else:
+        target_firm_fota = env.BinToFOTA(
+            join("$BUILD_DIR", "fota_${PROGNAME}"), target_firm)
     target_upload = target_firm
 
 if board.get("build.mcu") == "RDA8910":
     target_upload = join("$BUILD_DIR", "${PROGNAME}.img")
     env.Depends(target_upload, target_firm)
+elif board.get("build.mcu") in ["ASR1601", "ASR1603"]:
+    target_upload = join("$BUILD_DIR", "${PROGNAME}.zip")
 
-AlwaysBuild(env.Alias("nobuild", target_firm))
+AlwaysBuild(env.Alias("nobuild", target_firm_fota))
 target_buildprog = env.Alias("buildprog", target_firm, target_firm)
 
 #
@@ -163,7 +171,7 @@ if env.subst("$UPLOAD_PORT") == "":
             UPLOADERFLAGS=["-u"],
             REFLASH_FLAGS=["-u"],
         )
-    elif board.get("build.mcu") != "RDA8910":
+    elif board.get("build.mcu") not in ["RDA8910", "ASR1601", "ASR1603"]:
         upload_actions.insert(0, env.VerboseAction(env.AutodetectUploadPort,
             "Looking for upload port..."))
 

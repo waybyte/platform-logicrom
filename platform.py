@@ -1,4 +1,4 @@
-# Copyright 2022 Waybyte Solutions
+# Copyright 2023 Waybyte Solutions
 #
 # SPDX-License-Identifier: MIT
 #
@@ -13,7 +13,10 @@ class LogicromPlatform(PlatformBase):
         board_config = self.board_config(variables.get("board"))
         mcu = variables.get("board_build.mcu",
                             board_config.get("build.mcu", "MT2503"))
-        if mcu not in ("MT2503", "MT6261", "MT2625"):
+        if mcu in ("ASR1601", "ASR1603"):
+            self.frameworks["logicromsdk"]["script"] = "builder/framework/asr160x/logicromsdk.py"
+            self.frameworks["arduino"]["script"] = "builder/framework/asr160x/arduino.py"
+        elif mcu not in ("MT2503", "MT6261", "MT2625"):
             self.frameworks["logicromsdk"]["script"] = "builder/framework/%s/logicromsdk.py" % (
                 mcu.lower())
             self.frameworks["arduino"]["script"] = "builder/framework/%s/arduino.py" % (
