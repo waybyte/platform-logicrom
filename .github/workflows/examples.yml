@@ -11,11 +11,7 @@ jobs:
         python-version: [3.9]
         example:
           - "examples/arduino-blink"
-          - "examples/gpio-blink"
-          - "examples/adc-example"
-          - "examples/socket-example"
-          - "examples/ssl-socket-example"
-          - "examples/ssl-socket-clientauth"
+          - "examples/example-adc"
           - "examples/example-console"
           - "examples/example-display"
           - "examples/example-gpio"
@@ -24,9 +20,14 @@ jobs:
           - "examples/example-i2c"
           - "examples/example-os"
           - "examples/example-pwm"
+          - "examples/example-socket"
           - "examples/example-spi"
+          - "examples/example-ssl-socket"
+          - "examples/example-ssl-socket-clientauth"
           - "examples/example-timer"
           - "examples/example-uart"
+          - "examples/hello-world"
+          - "examples/logicromsdk-blink"
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout Logicrom platform and examples
