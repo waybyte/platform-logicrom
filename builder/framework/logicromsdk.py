@@ -22,7 +22,7 @@ assert isdir(FRAMEWORK_DIR)
 main_c = join(env.subst("$PROJECT_DIR"), "src", "main.c")
 main_cpp = join(env.subst("$PROJECT_DIR"), "src", "main.cpp")
 if (False == isfile(main_c)) and (False == isfile(main_cpp)):
-    copyfile(join(FRAMEWORK_DIR, "template", "main.c"), main_c)
+    copyfile(join(FRAMEWORK_DIR, "template", "main.c.tmpl"), main_c)
 
 def fota_crc16(data:bytearray, length):
     crc = 0
