@@ -1,10 +1,10 @@
 {
 	"build": {
 		"core": "logicrom",
-		"cpu": "armv7a",
+		"cpu": "armv7r",
 		"f_cpu": "416000000L",
 		"mcu": "ASR1601",
-		"variant": "a7670",
+		"variant": "asr160x",
 		"flashsz": "16M",
 		"logicromtype": "release",
 		"extra_flags": "-DSOC_ASR160X=1 -DSOC_ASR1601=1 -DPLATFORM_A7670=1",
@@ -20,6 +20,7 @@
 		"LTE Cat.1"
 	],
 	"frameworks": [
+		"arduino",
 		"logicromsdk"
 	],
 	"name": "SIMCOM A7670X LTE Cat.1 Module",

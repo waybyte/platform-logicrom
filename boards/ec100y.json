@@ -1,10 +1,10 @@
 {
 	"build": {
 		"core": "logicrom",
-		"cpu": "armv7a",
+		"cpu": "armv7r",
 		"f_cpu": "416000000L",
 		"mcu": "ASR1601",
-		"variant": "ec100y",
+		"variant": "asr160x",
 		"flashsz": "16M",
 		"logicromtype": "release",
 		"extra_flags": "-DSOC_ASR160X=1  -DSOC_ASR1601=1 -DPLATFORM_EC100Y=1",
@@ -20,6 +20,7 @@
 		"LTE Cat.1"
 	],
 	"frameworks": [
+		"arduino",
 		"logicromsdk"
 	],
 	"name": "Quectel EC100Y LTE Cat.1 Module",
