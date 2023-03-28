@@ -6,7 +6,6 @@
 		"mcu": "RDA8910",
 		"variant": "n716",
 		"logicromtype": "release",
-		"extra_flags": "-DSOC_RDA8910=1 -DPLATFORM_N716=1",
 		"hwids": [
 			[
 				"0x1782",

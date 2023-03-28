@@ -6,7 +6,6 @@
 		"mcu": "RDA8910",
 		"variant": "eg915u",
 		"logicromtype": "release",
-		"extra_flags": "-DSOC_RDA8910=1 -DPLATFORM_EG915U=1",
 		"hwids": [
 			[
 				"0x1782",

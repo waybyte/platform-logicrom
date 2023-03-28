@@ -6,7 +6,6 @@
 		"mcu": "RDA8910",
 		"variant": "ec200u",
 		"logicromtype": "release",
-		"extra_flags": "-DSOC_RDA8910=1 -DPLATFORM_EC200U=1",
 		"hwids": [
 			[
 				"0x1782",

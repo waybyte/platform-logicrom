@@ -6,7 +6,7 @@
 		"mcu": "RDA8955",
 		"variant": "a9",
 		"logicromtype": "release",
-		"extra_flags": "-DSOC_RDA8955=1 -DPLATFORM_A9G=1",
+		"extra_flags": "-DPLATFORM_A9G=1",
 		"hwids": [
 			[
 				"0x1782",

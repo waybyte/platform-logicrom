@@ -6,7 +6,6 @@
 		"mcu": "RDA8910",
 		"variant": "ec600u",
 		"logicromtype": "release",
-		"extra_flags": "-DSOC_RDA8910=1 -DPLATFORM_EC600U=1",
 		"hwids": [
 			[
 				"0x1782",

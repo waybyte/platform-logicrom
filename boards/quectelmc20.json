@@ -6,8 +6,7 @@
 		"mcu": "MT2503",
 		"variant": "mc60",
 		"newlib": "nano",
-		"logicromtype": "release",
-		"extra_flags": "-DPLATFORM_MC60=1"
+		"logicromtype": "release"
 	},
 	"connectivity": [
 		"gsm",

@@ -6,7 +6,6 @@
 		"mcu": "RDA8955",
 		"variant": "m590",
 		"logicromtype": "release",
-		"extra_flags": "-DSOC_RDA8955=1 -DPLATFORM_M590=1",
 		"hwids": [
 			[
 				"0x1782",

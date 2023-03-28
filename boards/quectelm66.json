@@ -6,8 +6,7 @@
 		"mcu": "MT6261",
 		"variant": "m66",
 		"newlib": "nano",
-		"logicromtype": "release",
-		"extra_flags": "-DPLATFORM_M66=1"
+		"logicromtype": "release"
 	},
 	"connectivity": [
 		"gsm",

@@ -7,7 +7,12 @@
 		"variant": "mc20u",
 		"newlib": "nano",
 		"logicromtype": "release",
-		"extra_flags": "-DPLATFORM_MC20U=1"
+		"hwids": [
+			[
+				"0x0E8D",
+				"0x0003"
+			]
+		]
 	},
 	"connectivity": [
 		"gsm",

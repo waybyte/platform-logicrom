@@ -7,7 +7,6 @@
 		"variant": "sim868",
 		"newlib": "nano",
 		"logicromtype": "release",
-		"extra_flags": "-DPLATFORM_SIM868=1",
 		"hwids": [
 			[
 				"0x0E8D",

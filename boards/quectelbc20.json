@@ -6,7 +6,6 @@
 		"mcu": "MT2625",
 		"variant": "bc20",
 		"logicromtype": "release",
-		"extra_flags": "-DPLATFORM_BC20=1",
 		"hwids": [
 			[
 				"0x0E8D",

@@ -6,7 +6,6 @@
 		"mcu": "RDA8955",
 		"variant": "mc65",
 		"logicromtype": "release",
-		"extra_flags": "-DSOC_RDA8955=1 -DPLATFORM_MC65=1",
 		"hwids": [
 			[
 				"0x1782",
