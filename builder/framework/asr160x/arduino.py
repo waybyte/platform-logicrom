@@ -99,6 +99,9 @@ env.Append(
 		"ARDUINO_ARCH_ARM",
         ("ARDUINO_VARIANT", '\\"%s\\"' % board.get("build.variant").replace('"', "")),
         ("ARDUINO_BOARD", '\\"%s\\"' % board.get("name").replace('"', "")),
+        ("SOC_ASR160X", "1"),
+        ("SOC_%s" % board.get("build.mcu").upper().replace('"', ""), "1"),
+        ("PLATFORM_%s" % board.get("build.variant").upper().replace('"', ""), "1"),
     ],
 
     CPPPATH=[

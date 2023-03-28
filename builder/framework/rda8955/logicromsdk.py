@@ -92,7 +92,9 @@ env.Append(
 
     CPPDEFINES=[
         ("__BUFSIZ__", "512"),
-        ("__FILENAME_MAX__", "256")
+        ("__FILENAME_MAX__", "256"),
+        ("SOC_%s" % board.get("build.mcu").upper().replace('"', ""), "1"),
+        ("PLATFORM_%s" % board.get("build.variant").upper().replace('"', ""), "1"),
     ],
 
     CPPPATH=[
