@@ -1,12 +1,10 @@
 {
 	"name": "logicrom",
 	"title": "Logicrom Development Platform",
-	"description": "Wireless IoT Development Platform for 4G LTE (RDA8910), GSM (MT2503/MT6261/RDA8955) & NBIoT (MT2625) Chipsets.",
-	"url": "https://waybyte.in/products/logicrom",
+	"description": "Wireless IoT Development Platform for 4G LTE (RDA8910, ASR1601, ASR1603), GSM (MT2503, MT6261, RDA8955) & NBIoT (MT2625) Chipsets.",
 	"homepage": "https://waybyte.in/",
 	"license": "MIT",
 	"keywords": [
-		"dev-platform",
 		"4G LTE",
 		"RDA8910",
 		"UIS8910DM",
@@ -20,25 +18,9 @@
 		"MT2503",
 		"MT2625",
 		"RDA8955",
-		"IoT",
-		"EC200u",
-		"EC600u",
-		"EG915U",
-		"N58",
-		"N716",
-		"N715",
-		"L610",
-		"M66",
-		"MC60",
-		"MC20",
-		"MC20UCB",
-		"M26",
-		"M56",
-		"SIM868",
-		"MC65",
-		"M590",
-		"A9",
-		"A9G"
+		"ASR1601",
+		"ASR1603",
+		"IoT"
 	],
 	"engines": {
 		"platformio": "^6"
@@ -47,20 +29,20 @@
 		"type": "git",
 		"url": "https://github.com/waybyte/platform-logicrom.git"
 	},
-	"version": "0.9.5",
+	"version": "0.9.6",
 	"vendor": "Waybyte Solutions",
 	"frameworks": {
 		"logicromsdk": {
 			"package": "framework-logicromsdk",
 			"script": "builder/framework/logicromsdk.py",
-			"description": "Logicrom Software Development Kit is a framework for Wireless IoT development on 4G LTE (RDA8910), GSM (MT2503/MT6261/RDA8955) and NBIoT (MT2625) chipsets/modules.",
+			"description": "Logicrom Software Development Kit is a framework for Wireless IoT development on 4G LTE (RDA8910, ASR1601, ASR1603), GSM (MT2503, MT6261, RDA8955) and NBIoT (MT2625) chipsets/modules.",
 			"homepage": "https://github.com/waybyte/logicromsdk",
 			"title": "Logicrom SDK"
 		},
 		"arduino": {
 			"package": "framework-logicromarduino",
 			"script": "builder/framework/arduino.py",
-			"description": "Arduino Wiring-based Framework For Logicrom Wireless IoT Platform",
+			"description": "Arduino Wiring-based Framework For Logicrom Wireless IoT Platform for 4G LTE (RDA8910, ASR1601, ASR1603), GSM (MT2503, MT6261, RDA8955) and NBIoT (MT2625) chipsets/modules.",
 			"homepage": "https://github.com/waybyte/arduino_logicrom",
 			"title": "Arduino Framework"
 		}
@@ -75,21 +57,21 @@
 			"type": "toolchain",
 			"owner": "waybyte",
 			"optional": true,
-			"version" : "https://waybyte.in/toolchain/toolchain-gccmipselfrda8955-windows-4.4.2.tar.gz"
+			"version": "https://waybyte.in/toolchain/toolchain-gccmipselfrda8955-windows-4.4.2.tar.gz"
 		},
 		"framework-logicromsdk": {
 			"type": "framework",
-			"version": "~0.9.6"
+			"version": "~0.9.9"
 		},
 		"framework-logicromarduino": {
 			"type": "framework",
 			"optional": true,
-			"version": "~0.9.3"
+			"version": "~0.9.4"
 		},
 		"tool-logicromflasher": {
 			"type": "uploader",
 			"optional": true,
-			"version": "~2.6.2"
+			"version": "~2.7.0"
 		}
 	},
 	"pythonPackages": {
