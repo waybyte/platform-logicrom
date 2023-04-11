@@ -25,9 +25,6 @@ class LogicromPlatform(PlatformBase):
         if mcu == "RDA8955":
             self.packages["toolchain-gccarmnoneeabi"]["optional"] = True
             self.packages["toolchain-gccmipselfrda8955"]["optional"] = False
-            if "windows" not in get_systype():
-                self.packages["toolchain-gccmipselfrda8955"]["version"] = "~4.4.2"
-
 
         return PlatformBase.configure_default_packages(self, variables,
                                                        target)
