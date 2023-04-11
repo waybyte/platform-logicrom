@@ -57,19 +57,22 @@
 			"type": "toolchain",
 			"owner": "waybyte",
 			"optional": true,
-			"version": "https://waybyte.in/toolchain/toolchain-gccmipselfrda8955-windows-4.4.2.tar.gz"
+			"version": "=4.4.2"
 		},
 		"framework-logicromsdk": {
 			"type": "framework",
+			"owner": "waybyte",
 			"version": "~0.9.9"
 		},
 		"framework-logicromarduino": {
 			"type": "framework",
+			"owner": "waybyte",
 			"optional": true,
 			"version": "~0.9.4"
 		},
 		"tool-logicromflasher": {
 			"type": "uploader",
+			"owner": "waybyte",
 			"optional": true,
 			"version": "~2.7.0"
 		}
