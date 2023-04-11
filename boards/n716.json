@@ -14,7 +14,7 @@
 		]
 	},
 	"connectivity": [
-		"gsm",
+		"cellular",
 		"bluetooth"
 	],
 	"frameworks": [

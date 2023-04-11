@@ -16,8 +16,7 @@
 		]
 	},
 	"connectivity": [
-		"gsm",
-		"LTE Cat.1"
+		"cellular"
 	],
 	"frameworks": [
 		"arduino",

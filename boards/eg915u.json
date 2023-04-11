@@ -14,8 +14,7 @@
 		]
 	},
 	"connectivity": [
-		"gsm",
-		"bluetooth"
+		"cellular"
 	],
 	"frameworks": [
 		"arduino",

@@ -9,7 +9,7 @@
 		"logicromtype": "release"
 	},
 	"connectivity": [
-		"gsm",
+		"cellular",
 		"bluetooth",
 		"gps"
 	],

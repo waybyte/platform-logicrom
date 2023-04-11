@@ -15,7 +15,7 @@
 		]
 	},
 	"connectivity": [
-		"gsm",
+		"cellular",
 		"bluetooth",
 		"gps"
 	],
