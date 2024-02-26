@@ -27,12 +27,12 @@ jobs:
       - name: Build Arduino
         run: |
           pio run -d app/arduino-verify
-      - name: Clone Logicrom SDK build test application
+      - name: Clone Logicrom OpenCPU SDK build test application
         uses: actions/checkout@v3
         with:
           repository: 'waybyte/logicromsdk-verify'
           path: app/logicromsdk-verify
-      - name: Build Logicrom SDK
+      - name: Build Logicrom OpenCPU SDK
         run: |
           pio run -d app/logicromsdk-verify
   build:
