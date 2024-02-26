@@ -1,0 +1,35 @@
+{
+	"build": {
+		"core": "logicrom",
+		"cpu": "armv7a",
+		"f_cpu": "500000000L",
+		"mcu": "RDA8910",
+		"variant": "ec200u",
+		"logicromtype": "release",
+		"extra_flags": "-DPLATFORM_LOGICROM_SPARK=1",
+		"hwids": [
+			[
+				"0x1782",
+				"0x4D11"
+			]
+		]
+	},
+	"connectivity": [
+		"cellular",
+		"bluetooth",
+		"gps"
+	],
+	"frameworks": [
+		"arduino",
+		"logicromsdk"
+	],
+	"name": "logicrom Spark LTE-G (EC200U)",
+	"upload": {
+		"maximum_ram_size": 524288,
+		"maximum_size": 1048576,
+		"require_upload_port": false,
+		"speed": 460800
+	},
+	"url": "https://logicrom.com",
+	"vendor": "Waybyte Solutions"
+}
