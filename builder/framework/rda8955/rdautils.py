@@ -1,3 +1,8 @@
+# Copyright 2024 Waybyte Solutions
+#
+# SPDX-License-Identifier: MIT
+#
+
 from os.path import join, getsize, split
 from os import remove
 from zlib import crc32
