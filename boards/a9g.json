@@ -22,7 +22,7 @@
 		"arduino",
 		"logicromsdk"
 	],
-	"name": "AiThinker A9G GSM Module",
+	"name": "AI-Thinker A9G GSM Module",
 	"upload": {
 		"maximum_ram_size": 1040384,
 		"maximum_size": 589824,
