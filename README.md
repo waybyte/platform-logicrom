@@ -1,4 +1,4 @@
-# Logicrom Wireless IoT Platform for Platformio IDE
+# Logicrom OpenCPU Development Platform for Platformio IDE
 
 [![PlatformIO Registry](https://badges.registry.platformio.org/packages/waybyte/platform/logicrom.svg)](https://registry.platformio.org/platforms/waybyte/logicrom)
 
@@ -42,7 +42,7 @@ For complete installation guide visit: [Installing Logicrom on PlatformIO](https
 
 ## Resources
 
-* [Documentation](https://docs.logicrom.com) - Logicrom SDK documentation for latest version
+* [Documentation](https://docs.logicrom.com) - Logicrom OpenCPU SDK documentation for latest version
 
 
 # Licensing

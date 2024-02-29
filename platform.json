@@ -1,7 +1,7 @@
 {
 	"name": "logicrom",
-	"title": "Logicrom Development Platform",
-	"description": "Wireless IoT Development Platform for 4G LTE (RDA8910, ASR1601, ASR1603), GSM (MT2503, MT6261, RDA8955) & NBIoT (MT2625) Chipsets.",
+	"title": "Logicrom OpenCPU Development Platform",
+	"description": "Logicrom OpenCPU Development Platform for IoT development on 4G LTE (RDA8910, ASR1601, ASR1603), GSM (MT2503, MT6261, RDA8955) & NBIoT (MT2625) Wireless IoT platforms.",
 	"homepage": "https://waybyte.in/",
 	"license": "MIT",
 	"keywords": [
@@ -29,20 +29,20 @@
 		"type": "git",
 		"url": "https://github.com/waybyte/platform-logicrom.git"
 	},
-	"version": "0.9.7",
+	"version": "1.0.0",
 	"vendor": "Waybyte Solutions",
 	"frameworks": {
 		"logicromsdk": {
 			"package": "framework-logicromsdk",
 			"script": "builder/framework/logicromsdk.py",
-			"description": "Logicrom Software Development Kit is a framework for Wireless IoT development on 4G LTE (RDA8910, ASR1601, ASR1603), GSM (MT2503, MT6261, RDA8955) and NBIoT (MT2625) chipsets/modules.",
+			"description": "Logicrom Software Development Kit is an OpenCPU framework/alternate SDK for Wireless IoT development on 4G LTE (RDA8910, ASR1601, ASR1603), GSM (MT2503, MT6261, RDA8955) and NBIoT (MT2625) chipsets/modules.",
 			"homepage": "https://github.com/waybyte/logicromsdk",
-			"title": "Logicrom SDK"
+			"title": "Logicrom OpenCPU SDK"
 		},
 		"arduino": {
 			"package": "framework-logicromarduino",
 			"script": "builder/framework/arduino.py",
-			"description": "Arduino Wiring-based Framework For Logicrom Wireless IoT Platform for 4G LTE (RDA8910, ASR1601, ASR1603), GSM (MT2503, MT6261, RDA8955) and NBIoT (MT2625) chipsets/modules.",
+			"description": "Arduino Wiring-based Framework For Logicrom OpenCPU Development Platform for 4G LTE (RDA8910, ASR1601, ASR1603), GSM (MT2503, MT6261, RDA8955) and NBIoT (MT2625) chipsets/modules.",
 			"homepage": "https://github.com/waybyte/arduino_logicrom",
 			"title": "Arduino Framework"
 		}
@@ -62,19 +62,19 @@
 		"framework-logicromsdk": {
 			"type": "framework",
 			"owner": "waybyte",
-			"version": "~0.9.9"
+			"version": "~1.0.0"
 		},
 		"framework-logicromarduino": {
 			"type": "framework",
 			"owner": "waybyte",
 			"optional": true,
-			"version": "~0.9.4"
+			"version": "~1.0.0"
 		},
 		"tool-logicromflasher": {
 			"type": "uploader",
 			"owner": "waybyte",
 			"optional": true,
-			"version": "~2.7.0"
+			"version": "~2.8.0"
 		}
 	},
 	"pythonPackages": {
