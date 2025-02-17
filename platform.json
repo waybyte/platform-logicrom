@@ -29,7 +29,7 @@
 		"type": "git",
 		"url": "https://github.com/waybyte/platform-logicrom.git"
 	},
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"vendor": "Waybyte Solutions",
 	"frameworks": {
 		"logicromsdk": {
@@ -62,13 +62,13 @@
 		"framework-logicromsdk": {
 			"type": "framework",
 			"owner": "waybyte",
-			"version": "~1.0.0"
+			"version": "~1.2.0"
 		},
 		"framework-logicromarduino": {
 			"type": "framework",
 			"owner": "waybyte",
 			"optional": true,
-			"version": "~1.0.0"
+			"version": "~1.1.0"
 		},
 		"tool-logicromflasher": {
 			"type": "uploader",
