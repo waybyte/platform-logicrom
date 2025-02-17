@@ -1,0 +1,33 @@
+{
+	"build": {
+		"core": "logicrom",
+		"cpu": "mips",
+		"f_cpu": "178000000L",
+		"mcu": "RDA8955",
+		"variant": "mc65",
+		"logicromtype": "release",
+		"hwids": [
+			[
+				"0x1782",
+				"0x4D11"
+			]
+		]
+	},
+	"connectivity": [
+		"cellular",
+        "gps"
+	],
+	"frameworks": [
+		"arduino",
+		"logicromsdk"
+	],
+	"name": "Quectel MC25 GSM Module",
+	"upload": {
+		"maximum_ram_size": 1040384,
+		"maximum_size": 589824,
+		"require_upload_port": false,
+		"speed": 460800
+	},
+	"url": "https://www.quectel.com/product/gsm-gprs-m65",
+	"vendor": "Quectel Wireless Solutions Co., Ltd."
+}
