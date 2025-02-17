@@ -133,6 +133,8 @@ env.Append(
         "-nostartfiles",
         "-nodefaultlibs",
         "-u", "main",
+        "-u", "io_pin2gpio",
+        "-u", "variant_init",
     ],
 
     LIBS=["rda_logicrom", "c", "gcc", "m"],

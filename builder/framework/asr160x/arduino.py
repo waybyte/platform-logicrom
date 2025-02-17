@@ -124,6 +124,8 @@ env.Append(
         "-nostartfiles",
         "-nodefaultlibs",
         "-u", "main",
+        "-u", "io_pin2gpio",
+        "-u", "variant_init",
     ],
 
     LIBS=["logicromasr", "c", "gcc", "m", "stdc++"],

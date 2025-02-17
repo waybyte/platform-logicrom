@@ -151,6 +151,7 @@ env.Append(
     ],
 
     CPPDEFINES=[
+        "__DYNAMIC_REENT__",
         ("__BUFSIZ__", "512"),
         ("__FILENAME_MAX__", "256"),
         ("F_CPU", "$BOARD_F_CPU"),
@@ -183,6 +184,8 @@ env.Append(
         "-nostartfiles",
         "-nodefaultlibs",
         "-u", "main",
+        "-u", "io_pin2gpio",
+        "-u", "variant_init",
     ],
 
     LIBS=["logicrom4g", "c", "gcc", "m", "stdc++"],

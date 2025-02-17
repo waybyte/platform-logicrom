@@ -175,6 +175,8 @@ env.Append(
         "-nostartfiles",
         "-nodefaultlibs",
         "-u", "main",
+        "-u", "io_pin2gpio",
+        "-u", "variant_init",
         "-Wl,--defsym,platform_init=platform_%s_init" % board.get("build.variant")
     ],
 
